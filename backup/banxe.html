@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZORENB - Showroom Siêu Xe Đẳng Cấp</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/banxe.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="layout-grid banxe-page">
+
+    <!-- THANH ĐIỀU HƯỚNG NỔI (GLASS NAVIGATION) -->
+    <header id="main-header">
+        <div class="logo">
+            <img src="image/logo.png" alt="ZORENB Logo" class="logo-img">
+            <span class="logo-text">ZORENB</span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="banxe.html" class="active" data-i18n="nav_home">Trang chủ</a></li>
+                <li class="nav-dropdown">
+                    <a href="showroom.html" data-i18n="nav_menu">MENU SIÊU XE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">LAMBORGHINI</a></li>
+                        <li><a href="#">FERRARI</a></li>
+                        <li><a href="#">PORSCHE</a></li>
+                        <li><a href="#">MCLAREN</a></li>
+                        <li><a href="#">ROLLS-ROYCE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-i18n="nav_service">Dịch vụ</a></li>
+                <li><a href="#" data-i18n="nav_news">Tin tức</a></li>
+                <li><a href="#" data-i18n="nav_contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 40px;">
+            <div class="language-selector">
+                <div class="lang-label" data-i18n="lang_label">Ngôn ngữ</div>
+                <div class="custom-select">
+                    <span class="current-lang-text">Tiếng Việt</span>
+                    <ul class="lang-dropdown">
+                        <li class="lang-option" data-lang="vi">Tiếng Việt</li>
+                        <li class="lang-option" data-lang="en">English</li>
+                        <li class="lang-option" data-lang="fr">Français</li>
+                        <li class="lang-option" data-lang="zh">简体中文</li>
+                        <li class="lang-option" data-lang="ja">日本語</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-indicator" style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00;"></div>
+                <div style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 700; color: var(--primary-gold);" data-i18n="hotline">ĐƯỜNG DÂY NÓNG: 1900 8888</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <main id="primary-content">
+
+            <!-- PHẦN HERO: NGHỆ THUẬT SIÊU XE -->
+            <section class="hero cinematic">
+                <video autoplay playsinline poster="image/hero.png" class="hero-video" id="hero-video-cinematic">
+                    <source src="video/Yêu_cầu_chỉnh_sửa_video_sang_trọng.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 data-i18n="hero_title">KIỆT TÁC CỦA <span>SỰ HOÀN HẢO</span></h1>
+                    <p style="font-size: 1.1rem; color: #ccc; max-width: 600px; line-height: 1.8; margin-bottom: 40px;" data-i18n="hero_desc">
+                        Nơi những giấc mơ cơ khí trở thành hiện thực. Khám phá phong cách sống thượng lưu cùng những mẫu xe biểu tượng thế giới.
+                    </p>
+                    <div class="hero-actions" style="display: flex; gap: 30px;">
+                        <a href="showroom.html" style="background: var(--metallic-gold); color: #000; padding: 18px 45px; border-radius: 5px; text-decoration: none; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;" data-i18n="btn_showroom">Khám Phá Showroom</a>
+                        <a href="#" style="border: 1px solid rgba(212,175,55,0.4); color: #fff; padding: 18px 45px; border-radius: 5px; text-decoration: none; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: rgba(255,255,255,0.05);" data-i18n="btn_book">Đặt Lịch Hẹn Riêng</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DANH SÁCH SẢN PHẨM: BỘ SƯU TẬP TUYỂN CHỌN -->
+            <section class="collection-section">
+                <h2 style="font-size: 2.2rem; font-weight: 800; letter-spacing: 5px; margin-bottom: 60px; text-transform: uppercase; border-left: 4px solid var(--primary-gold); padding-left: 25px;" data-i18n="section_collection">
+                    BỘ SƯU TẬP <span>CHỌN LỌC</span>
+                </h2>
+
+                <div class="car-grid">
+                    <!-- XE 1: LAMBORGHINI -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/lambo.png" alt="Lamborghini Revuelto">
+                        </div>
+                        <h3>Lamborghini Revuelto</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">V12 Hybrid HPEV - Kỷ
+                            nguyên siêu xe mới đã bắt đầu.</p>
+                        <div class="price-tag">45.000.000.000 ₫</div>
+
+                            <div class="detail-header">
+                                <h4 data-i18n="spec_label">Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label" data-i18n="info_engine">Động Cơ</span> <span class="info-value">V12 Hybrid</span></div>
+                                <div><span class="info-label" data-i18n="info_power">Công Suất</span> <span class="info-value">1,015 CV</span></div>
+                                <div><span class="info-label" data-i18n="info_speed">Tốc Độ Tối Đa</span> <span class="info-value">> 350 KM/H</span></div>
+                                <div><span class="info-label" data-i18n="info_accel">Tăng Tốc (0-100)</span> <span class="info-value">2.5s</span></div>
+                                <div><span class="info-label" data-i18n="info_tech">Công Nghệ Mới</span> <span class="info-value">Hybrid LPI 800-4</span></div>
+                            </div>
+                    </article>
+
+                    <!-- XE 2: FERRARI -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/ferrari.png" alt="Ferrari SF90 Stradale">
+                        </div>
+                        <h3>Ferrari SF90 Stradale</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">Trải nghiệm công
+                            nghệ đường đua F1 ngay trên phố.</p>
+                        <div class="price-tag">38.500.000.000 ₫</div>
+
+                        <div class="car-detail">
+                            <div class="detail-header">
+                                <h4>Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label">Động Cơ</span> <span class="info-value">V8
+                                        Twin-Turbo</span></div>
+                                <div><span class="info-label">Công Suất</span> <span class="info-value">1,000 CV</span>
+                                </div>
+                                <div><span class="info-label">Hộp Số</span> <span class="info-value">8 Cấp Ly Hợp
+                                        Kép</span></div>
+                                <div><span class="info-label">Năm Sản Xuất</span> <span class="info-value">2024</span>
+                                </div>
+                                <div><span class="info-label">Công Nghệ Mới</span> <span class="info-value">Assetto
+                                        Fiorano</span></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- XE 3: BENTLEY -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/bentley.png" alt="Bentley Continental GT">
+                        </div>
+                        <h3>Bentley Continental GT</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">Sự tinh túy của nghệ
+                            thuật Grand Tourer từ Anh Quốc.</p>
+                        <div class="price-tag">18.200.000.000 ₫</div>
+
+                        <div class="car-detail">
+                            <div class="detail-header">
+                                <h4>Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label">Động Cơ</span> <span class="info-value">W12 6.0L</span>
+                                </div>
+                                <div><span class="info-label">Nội Thất</span> <span class="info-value">Thủ Công Cá Nhân
+                                        Hóa</span></div>
+                                <div><span class="info-label">Phong Cách</span> <span class="info-value">Quý Tộc
+                                        Anh</span></div>
+                                <div><span class="info-label">Tình Trạng</span> <span class="info-value">Đặt Hàng
+                                        Trước</span></div>
+                                <div><span class="info-label">Công Nghệ Mới</span> <span class="info-value">Dynamic Ride
+                                        48V</span></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- BỘ SƯU TẬP THUẦN SPORT: NHỮNG CỖ MÁY TỐC ĐỘ -->
+            <section class="collection-section" style="margin-top: 100px;">
+                <h2 style="font-size: 2.2rem; font-weight: 800; letter-spacing: 5px; margin-bottom: 60px; text-transform: uppercase; border-left: 4px solid var(--primary-gold); padding-left: 25px;" data-i18n="section_sport">
+                    BỘ SƯU TẬP <span>THUẦN SPORT</span>
+                </h2>
+
+                <div class="car-grid">
+                    <!-- XE 4: PORSCHE 911 GT3 RS -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/porsche.png" alt="Porsche 911 GT3 RS">
+                        </div>
+                        <h3>Porsche 911 GT3 RS</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">Quái vật đường đua
+                            bước ra từ trong huyền thoại.</p>
+                        <div class="price-tag">12.600.000.000 ₫</div>
+
+                        <div class="car-detail">
+                            <div class="detail-header">
+                                <h4>Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label">Động Cơ</span> <span class="info-value">4.0L Flat-6</span>
+                                </div>
+                                <div><span class="info-label">Công Suất</span> <span class="info-value">525 PS</span>
+                                </div>
+                                <div><span class="info-label">Tăng Tốc (0-100)</span> <span
+                                        class="info-value">3.2s</span></div>
+                                <div><span class="info-label">Công Nghệ Mới</span> <span class="info-value">Active
+                                        Aerodynamics</span></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- XE 5: MCLAREN 720S -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/mclaren.png" alt="McLaren 720S Spider">
+                        </div>
+                        <h3>McLaren 720S Spider</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">Siêu xe mui trần với
+                            hiệu năng thách thức mọi giới hạn.</p>
+                        <div class="price-tag">24.500.000.000 ₫</div>
+
+                        <div class="car-detail">
+                            <div class="detail-header">
+                                <h4>Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label">Động Cơ</span> <span class="info-value">V8 4.0L
+                                        Twin-Turbo</span></div>
+                                <div><span class="info-label">Công Suất</span> <span class="info-value">720 PS</span>
+                                </div>
+                                <div><span class="info-label">Tốc Độ Tối Đa</span> <span class="info-value">341
+                                        KM/H</span></div>
+                                <div><span class="info-label">Công Nghệ Mới</span> <span class="info-value">Proactive
+                                        Chassis II</span></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- XE 6: ASTON MARTIN VANTAGE -->
+                    <article class="item-car">
+                        <div class="car-img-container">
+                            <img src="image/cars/valkyrie.png" alt="Aston Martin Vantage">
+                        </div>
+                        <h3>Aston Martin Vantage</h3>
+                        <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px;">Sự kết hợp hoàn hảo
+                            giữa vẻ đẹp và sức mạnh cơ bắp.</p>
+                        <div class="price-tag">14.900.000.000 ₫</div>
+
+                        <div class="car-detail">
+                            <div class="detail-header">
+                                <h4>Thông Số Kỹ Thuật</h4>
+                            </div>
+                            <div class="detail-info">
+                                <div><span class="info-label">Động Cơ</span> <span class="info-value">V8 4.0L
+                                        Twin-Turbo</span></div>
+                                <div><span class="info-label">Hộp Số</span> <span class="info-value">ZF 8 Cấp Tự
+                                        Động</span></div>
+                                <div><span class="info-label">Mô-men Xoắn</span> <span class="info-value">685 Nm</span>
+                                </div>
+                                <div><span class="info-label">Công Nghệ Mới</span> <span class="info-value">E-Diff
+                                        (Electronic Diff)</span></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- SIDEBAR: PHIÊN BẢN CÓ SẴN -->
+        <aside id="exclusive-sidebar">
+            <h2 class="sidebar-title" data-i18n="section_exclusive">PHIÊN BẢN GIỚI HẠN</h2>
+
+            <div class="ad-card">
+                <div class="car-img-container" style="width: 120px; height: 120px; margin: 0 auto 20px;">
+                    <img src="image/cars/porsche.png" alt="911 GT3 RS" style="width: 90%;">
+                </div>
+                <h3>Porsche 911 GT3 RS</h3>
+                <p style="font-size: 0.75rem; color: #888; margin: 10px 0;">Sẵn sàng cho mọi đường đua khắc nghiệt nhất.
+                </p>
+                <div class="ad-price" style="font-weight: 800; color: var(--primary-gold);">12.600.000.000 ₫</div>
+            </div>
+
+            <div class="ad-card">
+                <div class="car-img-container" style="width: 120px; height: 120px; margin: 0 auto 20px;">
+                    <img src="image/cars/rollsroyce.png" alt="Spectre" style="width: 90%;">
+                </div>
+                <h3>RR Spectre</h3>
+                <p style="font-size: 0.75rem; color: #888; margin: 10px 0;">Kỷ nguyên xe điện siêu sang đã chính thức
+                    bắt đầu.</p>
+                <div class="ad-price" style="font-weight: 800; color: var(--primary-gold);">LIÊN HỆ BÁO GIÁ</div>
+            </div>
+
+            <!-- ƯU ĐÃI ĐẶC QUYỀN -->
+            <div class="special-offer">
+                <p data-i18n="service_butler">DỊCH VỤ QUẢN GIA RIÊNG</p>
+                <p style="font-size: 0.7rem; font-weight: 400; opacity: 0.8; margin-top: 5px;" data-i18n="service_support">Hỗ trợ 24/7 cho các chủ sở hữu đặc quyền.</p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+
+</html>

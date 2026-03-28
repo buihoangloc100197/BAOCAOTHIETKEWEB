@@ -1,0 +1,635 @@
+:root {
+    /* --- BẢNG MÀU ELITE LUXURY --- */
+    --primary-color: #d4af37;               /* Vàng Gold chủ đạo */
+    --metallic-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%);
+    --bg-deep: #050505;                     /* Đen sâu */
+    --bg-glass: rgba(15, 15, 15, 0.7);      /* Hiệu ứng kính */
+    --text-main: #ffffff;
+    --text-dim: #999999;
+    --border-gold: transparent;             /* Bo vien trong suot */
+    
+    /* --- HỆ THỐNG ĐIỀU KHIỂN --- */
+    --header-height: 100px;
+    --lux-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    --lux-blur: blur(25px) saturate(180%);
+    --transition-slow: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- TỔNG THỂ (GLOBAL) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../image/showroom_bg.png'); /* Hinh nen toan trang */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Lop phu de chu de doc hon */
+    z-index: -1;
+}
+
+/* --- BỐ CỤC GRID --- */
+.layout-grid {
+    display: grid;
+    grid-template-areas: "header" "content";
+    grid-template-rows: var(--header-height) 1fr;
+    min-height: 100vh;
+}
+
+/* --- HEADER (Kế thừa phong cách Banxe) --- */
+header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background: rgba(5, 5, 5, 0.4); /* Phuong an 2: Minh bach cao */
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 10000;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- LANGUAGE SELECTOR & i18n --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.lang-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-gold);
+    font-weight: 700;
+}
+
+.custom-select {
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    min-width: 100px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: -15px;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    list-style: none;
+    padding: 10px 0;
+    width: 180px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s steps(4); /* HIỆU ỨNG NHẢY BẬC */
+    z-index: 10001;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.language-selector:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    padding: 12px 25px;
+    transition: all 0.2s steps(2); /* NHẢY BẬC KHI HOVER OPTION */
+    color: #ccc;
+}
+
+.lang-option:hover {
+    background: var(--metallic-gold);
+    color: #000;
+    padding-left: 35px;
+    font-weight: 800;
+}
+
+.current-lang-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.current-lang-text::after {
+    content: '▼';
+    font-size: 0.6rem;
+    color: var(--primary-gold);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+/* --- NAV DROPDOWN (MENU SIÊU XE) --- */
+.nav-dropdown {
+    position: relative;
+    padding-bottom: 30px; /* Bridge gap for hover */
+    margin-bottom: -30px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 250px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    list-style: none;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" steps animation */
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content li {
+    width: 100%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 30px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    opacity: 0.6 !important;
+}
+
+.dropdown-content li:hover {
+    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.dropdown-content li:hover a {
+    opacity: 1 !important;
+    color: var(--primary-color);
+}
+
+/* --- SHOWROOM WRAPPER --- */
+.showroom-wrapper {
+    grid-area: content;
+    background: transparent; /* Hien thi nen body xuyen thau */
+    padding-top: 40px;
+}
+
+.showroom-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+}
+
+/* --- SHOWROOM TOOLBAR --- */
+.showroom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 0 40px;
+    height: 100px;
+    background: rgba(5, 5, 5, 0.4); /* Phuong an 2: Kinh mo thuan tuy */
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.left-controls, .right-controls {
+    position: relative;
+    z-index: 5;
+}
+
+.left-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Hamburger & Brand Menu */
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    border-right: none;
+    padding-bottom: 30px; /* Bridge gap for hover */
+    margin-bottom: -30px;
+}
+
+.hamburger-container:hover .brand-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--primary-color);
+    transition: 0.3s;
+}
+
+.menu-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+/* Brand Nav Dropdown */
+.brand-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid var(--primary-color);
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" animation */
+    z-index: 10000; /* Uu tien cao nhat de khong bi che */
+    overflow: hidden;
+}
+
+.brand-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.brand-list {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.brand-item {
+    padding: 15px 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.brand-item:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+}
+
+.brand-name {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Luxury Select Tool */
+.luxury-select {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.luxury-select:hover {
+    border-color: var(--primary-color);
+}
+
+/* --- SHOWROOM GRID LAYOUT --- */
+.showroom-grid-layout {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 8px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+/* --- 3D CAROUSEL CORE --- */
+.carousel-container {
+    padding: 6.25rem 0;
+    perspective: 156.25rem; /* 2500px */
+    width: 100%;
+    height: 50rem; /* 800px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+.carousel-stage {
+    width: 25rem; /* 400px */
+    height: 34.375rem; /* 550px */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.item-car {
+    position: absolute;
+    width: 25rem; /* 400px */
+    min-height: 28.125rem; /* 450px - Rút ngắn lại cho hợp lý */
+    left: 0;
+    top: 0;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-gold);
+    border-radius: 25px;
+    transition: var(--transition-slow);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0; 
+    visibility: hidden; /* Mac dinh an de JS kien soat hien thi 3 xe */
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-slow);
+}
+
+.item-car.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 50; 
+}
+
+.item-car:hover {
+    z-index: 1000 !important; /* Luon noi len tren khi quan sat */
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+}
+
+/* Định vị các xe trong vòng tròn 3D */
+.item-car[data-index="0"] { transform: rotateY(0deg) translateZ(600px); }
+.item-car[data-index="1"] { transform: rotateY(45deg) translateZ(600px); }
+.item-car[data-index="2"] { transform: rotateY(90deg) translateZ(600px); }
+.item-car[data-index="3"] { transform: rotateY(135deg) translateZ(600px); }
+.item-car[data-index="4"] { transform: rotateY(180deg) translateZ(600px); }
+.item-car[data-index="5"] { transform: rotateY(225deg) translateZ(600px); }
+.item-car[data-index="6"] { transform: rotateY(270deg) translateZ(600px); }
+.item-car[data-index="7"] { transform: rotateY(315deg) translateZ(600px); }
+
+.item-car.focused {
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.1);
+}
+
+.car-card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-img-container {
+    width: 100%;
+    height: 180px; /* Thu nhỏ chiều cao ban đầu */
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.02);
+    overflow: hidden;
+    border-radius: 25px 25px 0 0; /* Bo goc cho anh o tren cung */
+    transition: var(--transition-slow);
+}
+
+.item-car:hover .car-img-container, 
+.item-car.active-detail .car-img-container {
+    height: 140px; /* Thu nhỏ thêm khi xem chi tiết để dành chỗ cho văn bản */
+}
+
+.car-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Om tron vao khung */
+    filter: brightness(0.8);
+    transition: var(--transition-slow);
+}
+
+.item-car:hover .car-img-container img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.item-car:hover .car-img-container {
+    transform: translateY(-40px); /* Day anh len tren */
+}
+
+.item-car h3 {
+    font-size: 1.3rem;
+    margin: 20px 0 5px;
+    letter-spacing: 2px;
+    transition: var(--transition-slow);
+}
+
+.item-car:hover h3, .item-car:hover .price-tag {
+    transform: translateY(-40px); /* Dong bo day len */
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Chi tiết ẩn */
+.car-detail {
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9); /* Nen dam de khong bi trung chu voi xe phia sau */
+    backdrop-filter: blur(20px);
+    padding: 0 30px 40px; /* Tăng padding bottom để tạo khoảng trống phía cuối */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    border-radius: 0 0 25px 25px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.item-car.active-detail .car-detail,
+.item-car:hover .car-detail {
+    opacity: 1;
+    max-height: 1500px; /* Đảm bảo thấy hết mọi hàng dữ liệu */
+    transform: translateY(-20px); 
+}
+
+/* Ghim xe duoc chon */
+.item-car.active-detail {
+    z-index: 500 !important;
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+}
+
+.detail-header h4 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.detail-info div {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0; /* Thu nhỏ khoảng cách giữa các hàng */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.info-label { color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; }
+.info-value { font-weight: 600; color: #fff; font-size: 0.85rem; }
+
+/* 3D Navigation Buttons */
+.carousel-nav-3d {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    pointer-events: none;
+    z-index: 500;
+}
+
+.nav-3d-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.nav-3d-btn:hover {
+    background: var(--primary-color);
+    color: #000;
+}
+
+/* --- RESPONSIVE OPTIMIZATION --- */
+@media (max-width: 1200px) {
+    .item-car { width: 320px; }
+    .item-car[data-index] { transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px); }
+    /* Logic CSS này cần script hỗ trợ index, ở đây set tay */
+}

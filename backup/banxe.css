@@ -1,0 +1,477 @@
+:root {
+    /* --- BẢNG MÀU ELITE LUXURY --- */
+    --primary-gold: #d4af37;                /* Vàng Gold nguyên bản */
+    --metallic-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%); /* Vàng kim loại 4D */
+    --bg-deep: #050505;                     /* Đen sâu tuyệt đối */
+    --bg-glass: rgba(15, 15, 15, 0.75);     /* Nền kính mờ */
+    --text-main: #ffffff;                   /* Chữ trắng tinh khiết */
+    --text-dim: #999999;                    /* Chữ xám mờ tinh xảo */
+    --border-gold: rgba(212, 175, 55, 0.2); /* Viền vàng mảnh nhạt */
+    
+    /* --- HỆ THỐNG ĐIỀU KHIỂN --- */
+    --header-height: 100px;                 /* Header cao ráo, bề thế */
+    --lux-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); /* Đổ bóng sâu tạo khối */
+    --lux-blur: blur(25px) saturate(180%);  /* Hiệu ứng kính mờ chuẩn chuyên gia */
+    --transition-slow: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Chuyển động quyền quý */
+}
+
+/* --- TỔNG THỂ (GLOBAL) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;    /* Làm mượt nét chữ trên MacOS/iOS */
+}
+
+/* --- BỐ CỤC CHUYÊN GIA (GRID & PURE LAYOUT) --- */
+.layout-grid {
+    display: grid;
+    grid-template-areas: "header" "content" "footer";
+    grid-template-rows: var(--header-height) 1fr auto;
+    min-height: 100vh;
+}
+
+/* --- HEADER KÍNH MỜ (FLOATING GLASS HEADER) --- */
+header {
+    grid-area: header;
+    position: fixed;                        /* Pinned Header đẳng cấp */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;                       /* Lề hông rộng 100px tạo sự thoáng đạt */
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: var(--lux-blur);
+    border-bottom: 1px solid var(--border-gold);
+    z-index: 9999;
+    transition: var(--transition-slow);
+}
+
+header:hover {
+    background: rgba(5, 5, 5, 0.9);         /* Đậm nền hơn khi tương tác */
+}
+
+/* --- LANGUAGE SELECTOR & i18n --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.lang-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-gold);
+    font-weight: 700;
+}
+
+.custom-select {
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    min-width: 100px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: -15px;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    list-style: none;
+    padding: 10px 0;
+    width: 180px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s steps(4); /* HIỆU ỨNG NHẢY BẬC */
+    z-index: 10001;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.language-selector:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    padding: 12px 25px;
+    transition: all 0.2s steps(2); /* NHẢY BẬC KHI HOVER OPTION */
+    color: #ccc;
+}
+
+.lang-option:hover {
+    background: var(--metallic-gold);
+    color: #000;
+    padding-left: 35px; /* Nhảy sang ngang một bậc */
+    font-weight: 800;
+}
+
+.current-lang-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.current-lang-text::after {
+    content: '▼';
+    font-size: 0.6rem;
+    color: var(--primary-gold);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-img {
+    height: 60px;                           /* Logo lớn hơn, uy phong hơn */
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 8px;                    /* Dãn chữ cực rộng thể hiện thương hiệu lớn */
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+/* --- NAVIGATION (MINIMAL LUXURY) --- */
+.nav-links {
+    display: flex;
+    gap: 50px;                              /* Khoảng cách menu rộng rãi */
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 400;                       /* Phông mảnh cho sự tinh tế */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    position: relative;
+    transition: var(--transition-slow);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--metallic-gold);
+    transition: var(--transition-slow);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-gold);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* --- NAV DROPDOWN (MENU SIÊU XE) --- */
+.nav-dropdown {
+    position: relative;
+    padding-bottom: 20px; /* Bridge gap for hover */
+    margin-bottom: -20px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 250px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    list-style: none;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" steps animation */
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-gold);
+}
+
+.nav-dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content li {
+    width: 100%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 30px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    opacity: 0.6 !important;
+}
+
+.dropdown-content a::after { display: none; } /* Bo gach chan cho dropdown */
+
+.dropdown-content li:hover {
+    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.dropdown-content li:hover a {
+    opacity: 1 !important;
+    color: var(--primary-gold);
+}
+
+/* --- CHUYÊN MỤC CHÍNH (CONTENT WRAPPER) --- */
+.content-wrapper {
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "main sidebar";
+    grid-template-columns: 1fr 400px;       /* Sidebar rộng hơn để chứa nội dung chất lượng */
+    gap: 0;
+    background: radial-gradient(circle at 30% 30%, #111 0%, #050505 100%); /* Hiệu ứng ánh sáng studio */
+}
+
+main {
+    grid-area: main;
+    padding: 100px 80px;                    /* Padding lớn tạo khoảng không chuyên gia */
+}
+
+aside {
+    grid-area: sidebar;
+    background: rgba(10, 10, 10, 0.5);
+    border-left: 1px solid var(--border-gold);
+    padding: 100px 50px;
+    backdrop-filter: blur(10px);
+    position: sticky;                      /* Sidebar dính vào màn hình khi cuộn */
+    top: var(--header-height);              /* Vị trí dính cách Header một khoảng chuẩn */
+    height: fit-content;                    /* Đảm bảo Sidebar chỉ cao bằng nội dung để trượt mượt */
+}
+
+/* --- HERO SECTION CINEMATIC --- */
+.hero {
+    height: 70vh;
+    margin-bottom: 120px;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--lux-shadow);
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video luon phu kin khung hinh */
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 100px;
+    text-align: left;                       /* Căn trái tạo sự hiện đại, lôi cuốn */
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content span {
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- SIÊU PHẨM (CAR CARDS) --- */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Hiển thị 3 xe mỗi hàng */
+    gap: 60px 40px;                         /* Khoảng cách chuẩn chuyên gia cho layout 3 cột */
+    justify-content: center;
+}
+
+.item-car {
+    width: 100%;                            /* Phụ thuộc vào GRID để kiểm soát chiều rộng */
+    max-width: 420px;
+    background: var(--bg-glass);
+    backdrop-filter: var(--lux-blur);
+    border-radius: 30px;
+    padding: 50px 40px;
+    border: 1px solid var(--border-gold);
+    transition: var(--transition-slow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;                    /* Căn giữa toàn bộ nội dung trong thẻ xe */
+    text-align: center;                     /* Chữ căn giữa đồng bộ với ảnh */
+    position: relative;
+    z-index: 10;
+}
+
+.item-car:hover {
+    transform: translateY(-20px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.car-img-container {
+    width: 200px;                           /* Kích thước khung ảnh chuẩn Expert */
+    height: 200px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 50%;                     /* Khung hình tròn chuẩn Luxury */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px;                    /* Căn giữa khối ảnh tự động */
+    transition: var(--transition-slow);
+    border: 1px solid var(--border-gold);
+    overflow: hidden;                       /* Đảm bảo ảnh không tràn ra ngoài hình tròn */
+}
+
+.car-img-container img {
+    width: 100%;                            /* Ảnh chiếm trọn chiều rộng khung tròn */
+    height: 100%;                           /* Ảnh chiếm trọn chiều cao khung tròn */
+    object-fit: cover;                      /* Cắt ảnh thông minh để lấp đầy hình tròn */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    transition: var(--transition-slow);
+}
+
+.item-car:hover .car-img-container {
+    background: rgba(212, 175, 55, 0.05);
+    transform: scale(1.1);
+}
+
+.item-car h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+}
+
+/* --- CHI TIẾT KỸ THUẬT (POP-OUT MODAL CLASS) --- */
+.car-detail {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-deep);
+    border-radius: 30px;
+    padding: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-slow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 50;
+    border: 1px solid var(--primary-gold);
+}
+
+.item-car:hover .car-detail {
+    opacity: 1;
+    visibility: visible;
+}
+
+.detail-info div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.info-label { color: var(--text-dim); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+.info-value { font-weight: 600; color: var(--primary-gold); }
+
+/* --- SIDEBAR REFINEMENT --- */
+.sidebar-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: var(--primary-gold);
+    border-bottom: 1px solid var(--border-gold);
+    padding-bottom: 15px;
+}
+
+.ad-card {
+    background: var(--bg-glass);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-gold);
+    transition: var(--transition-slow);
+    text-align: center;
+}
+
+.ad-card:hover { border-color: var(--primary-gold); transform: scale(1.02); }
+
+/* --- FOOTER / OFFERS --- */
+.special-offer {
+    background: var(--metallic-gold);
+    color: #000;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.special-offer p { font-weight: 800; font-size: 1.2rem; margin-bottom: 5px; }

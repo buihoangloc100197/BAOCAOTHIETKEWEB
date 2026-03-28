@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom ZORENB - Thế Giới Siêu Xe</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/showroom.css">
+    <!-- Main Script -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="layout-grid showroom-page">
+
+    <!-- Header & Navbar (Kế thừa từ banxe.html) -->
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="image/logo.png" alt="ZORENB Logo" class="logo-img" style="border-radius: 50%;">
+                <span class="logo-text">ZORENB</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="banxe.html" data-i18n="nav_home">Trang chủ</a></li>
+                <li class="nav-dropdown">
+                    <a href="showroom.html" class="active" data-i18n="nav_menu">MENU SIÊU XE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">LAMBORGHINI</a></li>
+                        <li><a href="#">FERRARI</a></li>
+                        <li><a href="#">PORSCHE</a></li>
+                        <li><a href="#">MCLAREN</a></li>
+                        <li><a href="#">ROLLS-ROYCE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-i18n="nav_service">Dịch vụ</a></li>
+                <li><a href="#" data-i18n="nav_news">Tin tức</a></li>
+                <li><a href="#" data-i18n="nav_contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 40px;">
+            <div class="language-selector">
+                <div class="lang-label" data-i18n="lang_label">Ngôn ngữ</div>
+                <div class="custom-select">
+                    <span class="current-lang-text">Tiếng Việt</span>
+                    <ul class="lang-dropdown">
+                        <li class="lang-option" data-lang="vi">Tiếng Việt</li>
+                        <li class="lang-option" data-lang="en">English</li>
+                        <li class="lang-option" data-lang="fr">Français</li>
+                        <li class="lang-option" data-lang="zh">简体中文</li>
+                        <li class="lang-option" data-lang="ja">日本語</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-info" style="display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"></path>
+                </svg>
+                <div style="color: var(--primary-color); font-weight: 600;" data-i18n="hotline">CSKH HOTLINE: 1900 8888</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="showroom-wrapper">
+        <!-- Main Content: Tối giản không Sidebar -->
+        <main class="showroom-content">
+            <!-- Showroom Toolbar (Thanh Công cụ Nhất quán) -->
+            <div class="showroom-toolbar">
+                <div class="left-controls">
+                    <div class="hamburger-container" id="sidebar-toggle">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="menu-label">MENU HÃNG</span>
+
+                        <!-- Brand Dropdown -->
+                        <nav class="brand-nav" id="brand-nav">
+                            <ul class="brand-list">
+                                <li class="brand-item">
+                                    <div class="brand-header"><span class="brand-name">LAMBORGHINI</span><i class="arrow-icon"></i></div>
+                                </li>
+                                <li class="brand-item">
+                                    <div class="brand-header"><span class="brand-name">FERRARI</span><i class="arrow-icon"></i></div>
+                                </li>
+                                <li class="brand-item">
+                                    <div class="brand-header"><span class="brand-name">PORSCHE</span><i class="arrow-icon"></i></div>
+                                </li>
+                                <li class="brand-item">
+                                    <div class="brand-header"><span class="brand-name">MCLAREN</span><i class="arrow-icon"></i></div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="right-controls">
+                    <select class="luxury-select">
+                        <option>Sắp xếp: Mới nhất</option>
+                        <option>Giá: Từ cao đến thấp</option>
+                        <option>Giá: Từ thấp đến cao</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- New Grid Layout for Title and 3D Carousel -->
+            <div class="showroom-grid-layout">
+                <h2 class="section-title">BỘ SƯU TẬP <span style="color: var(--primary-color);">BÁN CHẠY NHẤT</span></h2>
+                
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-stage" id="carouselStage">
+                        <!-- 1. Lamborghini Revuelto -->
+                        <div class="item-car" data-index="0">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/lambo.png" alt="Lamborghini"></div>
+                                <h3>Lamborghini Revuelto</h3>
+                                <div class="price-tag">45 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Siêu xe</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Lamborghini</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">V12 Hybrid</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">6.5L (6498 cc)</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">45 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Ferrari SF90 -->
+                        <div class="item-car" data-index="1">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/ferrari.png" alt="Ferrari"></div>
+                                <h3>Ferrari SF90 Stradale</h3>
+                                <div class="price-tag">38.5 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Siêu xe</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Ferrari</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">V8 Twin-Turbo Hybrid</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">4.0L (3990 cc)</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2023</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">38.5 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Bentley Continental -->
+                        <div class="item-car" data-index="2">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/bentley.png" alt="Bentley"></div>
+                                <h3>Bentley Continental GT</h3>
+                                <div class="price-tag">18.2 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Xe sang</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Bentley</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">W12 Twin-Turbo</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">6.0L (5950 cc)</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">18.2 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Porsche 911 GT3 -->
+                        <div class="item-car" data-index="3">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/porsche.png" alt="Porsche"></div>
+                                <h3>Porsche 911 GT3</h3>
+                                <div class="price-tag">12.6 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Siêu xe</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Porsche</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">4.0L Flat-6</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">3996 cc</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">12.6 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Bugatti Chiron -->
+                        <div class="item-car" data-index="4">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/bugatti.png" alt="Bugatti"></div>
+                                <h3>Bugatti Chiron</h3>
+                                <div class="price-tag">90 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Siêu xe</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Bugatti</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">W16 Quad-Turbo</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">8.0L</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">90 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Aston Martin Valkyrie -->
+                        <div class="item-car" data-index="5">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/valkyrie.png" alt="Aston Martin"></div>
+                                <h3>Aston Martin Valkyrie</h3>
+                                <div class="price-tag">85 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header">
+                                        <h4 data-i18n="spec_label">Thông Số Kỹ Thuật</h4>
+                                    </div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label" data-i18n="info_engine">Động Cơ</span> <span class="info-value">V12 Racing</span></div>
+                                        <div><span class="info-label" data-i18n="info_power">Công Suất</span> <span class="info-value">1160 HP</span></div>
+                                        <div><span class="info-label" data-i18n="info_speed">Tốc Độ Tối Đa</span> <span class="info-value">402 km/h</span></div>
+                                        <div><span class="info-label" data-i18n="info_accel">Tăng Tốc (0-100)</span> <span class="info-value">2.5s</span></div>
+                                        <div><span class="info-label" data-i18n="info_tech">Công Nghệ Mới</span> <span class="info-value">F1 Inspired</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. McLaren P1 -->
+                        <div class="item-car" data-index="6">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/mclaren.png" alt="McLaren"></div>
+                                <h3>McLaren P1</h3>
+                                <div class="price-tag">42 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Siêu xe</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">McLaren</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">V8 Hybrid</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">3.8L</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">42 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Rolls-Royce Ghost -->
+                        <div class="item-car" data-index="7">
+                            <div class="car-card-inner">
+                                <div class="car-img-container"><img src="image/cars/rollsroyce.png" alt="Rolls-Royce"></div>
+                                <h3>Rolls-Royce Ghost</h3>
+                                <div class="price-tag">35 Tỷ VNĐ</div>
+                                <div class="car-detail">
+                                    <div class="detail-header"><h4>Chi tiết Xe sang</h4></div>
+                                    <div class="detail-info">
+                                        <div><span class="info-label">Hãng xe:</span> <span class="info-value">Rolls-Royce</span></div>
+                                        <div><span class="info-label">Động cơ:</span> <span class="info-value">V12 Twin-Turbo</span></div>
+                                        <div><span class="info-label">Dung tích:</span> <span class="info-value">6.75L</span></div>
+                                        <div><span class="info-label">Năm SX:</span> <span class="info-value">2024</span></div>
+                                        <div><span class="info-label">Giá niêm yết:</span> <span class="info-value" style="color: var(--primary-color);">35 Tỷ VNĐ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Navigation Buttons -->
+                    <div class="carousel-nav-3d">
+                        <button class="nav-3d-btn btn-prev" id="prevBtn3D"><span>&lt;</span></button>
+                        <button class="nav-3d-btn btn-next" id="nextBtn3D"><span>&gt;</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+</body>
+
+</html>
