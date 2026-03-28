@@ -1,0 +1,212 @@
+/* ==========================================================================
+   CSS CHO TRANG TIN TỨC (tintuc.html)
+   Kế hoạch: Sử dụng Layout Grid cho bố cục chính và Flexbox cho tiểu tiết.
+   ========================================================================== */
+
+/* --- HIỆU CHỈNH LẠI WRAPPER TRANG TIN TỨC --- */
+/* Ghi đè content-wrapper của banxe.html, bỏ sidebar để mở rộng không gian tin bài */
+.news-wrapper {
+    grid-template-columns: 1fr; /* Full-width grid 1 cột chính */
+    background: radial-gradient(circle at 50% 10%, #151515 0%, #050505 100%);
+}
+
+.news-main-content {
+    padding: 140px 10% 80px 10%; /* Căn lề rộng rãi tạo hơi thở cao cấp */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- HEADER TIN TỨC --- */
+.news-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.news-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.news-header span {
+    background: var(--metallic-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.news-subtitle {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   BỐ CỤC CHÍNH BẰNG CSS GRID 
+   ========================================================= */
+.news-grid {
+    display: grid;
+    /* Tự động chia cột: tối thiểu 350px, tự động nở rộng bù chỗ trống */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px; /* Khoảng cách thẩm mỹ xuất sắc */
+    align-items: stretch;
+}
+
+/* Thẻ tin nổi bật chiếm nhiều diện tích hơn khi ở màn hình lớn */
+@media (min-width: 1100px) {
+    .news-card.featured {
+        grid-column: span 2; /* Chiếm 2 cột grid */
+    }
+}
+
+
+/* =========================================================
+   BỐ CỤC CHI TIẾT (MỖI BÀI BÁO) BẰNG FLEXBOX
+   ========================================================= */
+.news-card {
+    background: rgba(20, 20, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden; /* Cắt gọn gàng cho hình ảnh */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    
+    /* Flexbox setup cho khối dọc */
+    display: flex;
+    flex-direction: column; 
+    
+    transition: var(--transition-slow);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    border-color: rgba(212, 175, 55, 0.3); /* Viền gold nhẹ khi hover */
+    background: rgba(30, 30, 30, 0.5);
+}
+
+/* Hình ảnh bài viết */
+.news-img-box {
+    position: relative;
+    width: 100%;
+    /* Flexbox hỗ trợ định hình form */
+    display: flex;
+    height: 300px;
+    overflow: hidden;
+}
+
+.news-card.featured .news-img-box {
+    height: 450px; /* Bài nổi bật thì ảnh to hơn */
+}
+
+.news-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Phủ kín khung, không méo */
+    transition: transform 0.8s ease;
+}
+
+.news-card:hover .news-img-box img {
+    transform: scale(1.08); /* Phóng lớn chậm để tạo cảm giác chìm đắm */
+}
+
+/* Danh mục tin (Tag) nổi lên ảnh */
+.news-category {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-gold);
+    color: var(--primary-gold);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 6px 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Khối thông tin văn bản */
+.news-info {
+    padding: 30px;
+    /* Flexbox để dàn văn bản dọc */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Chiếm hết khoản trống còn lại, đẩy nút Read More xuống đáy */
+    gap: 15px; /* Giãn cách các thành phần trong chữ */
+}
+
+/* Micro layout Meta-data (ngày, tác giả) */
+.meta-data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.meta-data .separator {
+    color: rgba(255,255,255,0.2);
+}
+
+.meta-data .author {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.news-info h2 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.news-card.featured h2 {
+    font-size: 2.2rem;
+}
+
+.news-card:hover h2 {
+    color: var(--primary-gold);
+}
+
+.news-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Flexbox để hút nút bấm */
+.read-more-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto; /* Magic từ Flexbox: Tự đẩy nút bấm xuống dưới cùng khung */
+    padding-bottom: 5px;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: var(--primary-gold);
+}
+
+.read-more-btn:hover svg {
+    transform: translateX(5px); /* Arrow move right */
+    stroke: var(--primary-gold);
+}
