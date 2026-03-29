@@ -8,8 +8,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/banxe.css">
     <link rel="stylesheet" href="css/tintuc.css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 
@@ -69,123 +71,83 @@
     <div class="content-wrapper news-wrapper">
         <main id="primary-content" class="news-main-content">
 
-            <!-- PHẦN HEADER TIN TỨC -->
+            <!-- PHẦN HEADER TIN TỨC (REDESIGNED) -->
             <section class="news-header">
                 <h1 data-i18n="news_main_title">TIN TỨC <span>& SỰ KIỆN NỔI BẬT</span></h1>
-                <p class="news-subtitle" data-i18n="news_main_desc">
-                    Trải nghiệm dòng chảy tốc độ cập nhật liên tục từ những thương hiệu xa xỉ bậc nhất thế giới.
-                </p>
+                <div class="zen-line-bottom"></div>
             </section>
 
-            <!-- LƯỚI TIN TỨC: BỐ CỤC GRID CHÍNH -->
-            <section class="news-grid">
+            <!-- FULL-WIDTH STACK & PARALLAX (CANH GIỮA TUYỆT ĐỐI) -->
+            <section class="news-center-wrapper">
 
-                <!-- BÀI BÁO 1 (Featured Story, chiếm 2 cột nếu màn rộng) -->
-                <article class="news-card featured">
-                    <div class="news-img-box">
-                        <img src="image/news/ferrari_concept_news_1774698356923.png" alt="Concept Ferrari mui trần">
-                        <div class="news-category">BẢN KIẾN TẠO TƯƠNG LAI</div>
-                    </div>
-
-                    <div class="news-info">
-                        <div class="meta-data">
-                            <span class="date">28 Tháng 03, 2026</span>
-                            <span class="separator">|</span>
-                            <span class="author">Bởi Lê Hoàng</span>
+                <!-- HÀNG ĐẦU TIÊN: BÀI 1 & BÀI 2 (SEAMLESS CINEMATIC SYNC) -->
+                <div class="news-top-row">
+                    <!-- BÀI BÁO 1 (SEAMLESS CINEMATIC) -->
+                    <article class="news-card-full">
+                        <div class="parallax-bg"
+                            style="background-image: url('image/news/ferrari_concept_news_1774698356923.png');"></div>
+                        <div class="news-info-overlay">
+                            <span class="news-cat-zen">Bản Kiến Tạo Tương Lai</span>
+                            <h2>Ferrari Concept</h2>
+                            <p>Mũi Tên Đỏ Đâm Thủng Màn Đêm Bờ Biển Địa Trung Hải. Ngôn ngữ thiết kế lai táo bạo nhất từ
+                                Maranello lộ diện, sở hữu lớp sơn đỏ ruby kim loại đầy kiêu hãnh.</p>
+                            <a href="news_detail/ferrari-concept.html" class="zen-btn">KHÁM PHÁ CHI TIẾT →</a>
                         </div>
-                        <h2>Concept Ferrari: Mũi Tên Đỏ Đâm Thủng Màn Đêm Bờ Biển Địa Trung Hải</h2>
-                        <p class="news-excerpt">Ngôn ngữ thiết kế lai táo bạo nhất từ Maranello lộ diện, sở hữu lớp sơn
-                            đỏ ruby kim loại cùng những đường gân cắt xẻ như đang xé toạc không khí.</p>
+                    </article>
 
-                        <a href="#" class="read-more-btn">
-                            ĐỌC TIẾP
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- BÀI BÁO 2 -->
-                <article class="news-card">
-                    <div class="news-img-box">
-                        <img src="image/news/lambo_hybrid_news_1774698380802.png" alt="Lamborghini Hybrid Matte Black">
-                        <div class="news-category">CÔNG NGHỆ ĐỘNG CƠ MỚI</div>
-                    </div>
-
-                    <div class="news-info">
-                        <div class="meta-data">
-                            <span class="date">26 Tháng 03, 2026</span>
+                    <!-- BÀI BÁO 2 (SEAMLESS CINEMATIC) -->
+                    <article class="news-card-full">
+                        <div class="parallax-bg"
+                            style="background-image: url('image/news/lambo_hybrid_news_1774698380802.png');"></div>
+                        <div class="news-info-overlay">
+                            <span class="news-cat-zen">Công Nghệ Động Cơ Mới</span>
+                            <h2>Lamborghini Eclipse</h2>
+                            <p>Siêu Phẩm Hypercar Lai Kỷ Nguyên Mới. Lớp sơn đen nhám hấp thụ ánh sáng cùng viền neon
+                                xanh lá mãnh liệt từ "Bò Tót" Italy.</p>
+                            <a href="news_detail/lambo-hybrid.html" class="zen-btn">KHÁM PHÁ CHI TIẾT →</a>
                         </div>
-                        <h2>Siêu Phẩm Hypercar Lai Kỷ Nguyên Mới Từ "Bò Tót" Italy</h2>
-                        <p class="news-excerpt">Lớp sơn đen nhám hấp thụ ánh sáng cùng viền neon xanh lá. Dòng chảy năng
-                            lượng hybrid đẩy sức mạnh động cơ lên ngưỡng không tưởng dưới gaio diện tương lai.</p>
+                    </article>
+                </div>
 
-                        <a href="#" class="read-more-btn">
-                            ĐỌC TIẾP <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- BÀI BÁO 3 -->
-                <article class="news-card">
-                    <div class="news-img-box">
-                        <img src="image/news/rolls_royce_ev_news_1774698408651.png" alt="Rolls-Royce Spectre Night EV">
-                        <div class="news-category">XE ĐIỆN SIÊU SANG</div>
-                    </div>
-
-                    <div class="news-info">
-                        <div class="meta-data">
-                            <span class="date">20 Tháng 03, 2026</span>
+                <!-- LƯỚI GRID ĐỀU CHO CÁC TIN KHÁC (EVEN LAYOUT) -->
+                <div class="news-grid-even">
+                    <!-- BÀI BÁO 3 -->
+                    <article class="news-card-standard">
+                        <img src="image/news/rolls_royce_ev_news_1774698408651.png" alt="Rolls">
+                        <div class="news-info">
+                            <span class="news-cat-zen">Xe Điện Siêu Sang</span>
+                            <h2>Rolls-Royce Spectre: Sự Trầm Mặc Quyền Uy</h2>
+                            <p class="news-excerpt-zen"
+                                style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.6);">Kỷ nguyên
+                                thuần điện không làm mất đi vẻ bề thế của ngai vàng di động. Biểu tượng Spirit of
+                                Ecstasy rực sáng tĩnh lặng.</p>
+                            <a href="news_detail/rolls-spectre.html" class="zen-btn"
+                                style="padding: 12px 30px; font-size: 0.8rem;">ĐỌC TIẾP</a>
                         </div>
-                        <h2>Sự Trầm Mặc Quyền Uy: Rolls-Royce EV Giữa Lòng Đô Thị Neon</h2>
-                        <p class="news-excerpt">Kỷ nguyên thuần điện không làm mất đi vẻ bề thế của ngai vàng di động.
-                            Biểu tượng Spirit of Ecstasy rực sáng tĩnh lặng trên con phố tương lai, định nghĩa lại chuẩn
-                            mực xa xỉ.</p>
+                    </article>
 
-                        <a href="#" class="read-more-btn">
-                            ĐỌC TIẾP <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- BÀI BÁO 4 (Ảnh có sẵn) -->
-                <article class="news-card">
-                    <div class="news-img-box">
-                        <img src="image/cars/mclaren.png" alt="McLaren Evolution">
-                        <div class="news-category">THỊ TRƯỜNG</div>
-                    </div>
-
-                    <div class="news-info">
-                        <div class="meta-data">
-                            <span class="date">15 Tháng 03, 2026</span>
+                    <!-- BÀI BÁO 4 -->
+                    <article class="news-card-standard">
+                        <img src="image/cars/mclaren.png" alt="McLaren">
+                        <div class="news-info">
+                            <span class="news-cat-zen">Thị Trường & Sự Kiện</span>
+                            <h2>McLaren MSO: Gói Cá Nhân Hóa Độc Quyền</h2>
+                            <p class="news-excerpt-zen"
+                                style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.6);">Khách hàng
+                                VVIP giờ đây có thể tinh chỉnh triệt để cấu trúc sợi carbon và phối màu khí động học qua
+                                chương trình MSO.</p>
+                            <a href="news_detail/mclaren-custom.html" class="zen-btn"
+                                style="padding: 12px 30px; font-size: 0.8rem;">ĐỌC TIẾP</a>
                         </div>
-                        <h2>McLaren Ra Mắt Gói Cá Nhân Hóa Độc Quyền Tại Triển Lãm Châu Á</h2>
-                        <p class="news-excerpt">Khách hàng VVIP giờ đây có thể tinh chỉnh triệt để cấu trúc sợi carbon
-                            và phối màu khí động học qua chương trình đặc quyền MSO do chính kỹ sư của McLaren thực
-                            hiện.</p>
-
-                        <a href="#" class="read-more-btn">
-                            ĐỌC TIẾP <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
             </section>
+
+
+
+
+
         </main>
     </div>
 

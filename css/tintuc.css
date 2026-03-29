@@ -1,212 +1,420 @@
 /* ==========================================================================
-   CSS CHO TRANG TIN TỨC (tintuc.html)
-   Kế hoạch: Sử dụng Layout Grid cho bố cục chính và Flexbox cho tiểu tiết.
+   CSS CHO TRANG TIN TỨC (SEAMLESS CINEMATIC REFINEMENT)
+   Bố cục: Full Screen (96% Width), 2 Bài đầu Stack (100% Full), 
+   Phá bỏ vách ngăn (No Glass Box), Chữ và Ảnh là một tổng thể thống nhất.
    ========================================================================== */
 
-/* --- HIỆU CHỈNH LẠI WRAPPER TRANG TIN TỨC --- */
-/* Ghi đè content-wrapper của banxe.html, bỏ sidebar để mở rộng không gian tin bài */
+:root {
+    --luxury-bg: #000000;
+    --luxury-gold: #d4af37;
+    --luxury-border: rgba(212, 175, 55, 0.15);
+    --transition-elite: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* OVERRIDE GLOBAL WRAPPER TO BE FULL SCREEN */
 .news-wrapper {
-    grid-template-columns: 1fr; /* Full-width grid 1 cột chính */
-    background: radial-gradient(circle at 50% 10%, #151515 0%, #050505 100%);
+    max-width: none !important;
+    width: 100% !important;
+    display: block !important;
 }
 
 .news-main-content {
-    padding: 140px 10% 80px 10%; /* Căn lề rộng rãi tạo hơi thở cao cấp */
-    max-width: 1400px;
-    margin: 0 auto;
+    background: var(--luxury-bg);
+    padding: 160px 0 100px 0;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* --- HEADER TIN TỨC --- */
+/* --- HEADER SECTION: ROYAL METALLIC SWEEP (EXPERT UX) --- */
 .news-header {
     text-align: center;
-    margin-bottom: 80px;
-}
-
-.news-header h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.news-header span {
-    background: var(--metallic-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.news-subtitle {
-    color: var(--text-dim);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* =========================================================
-   BỐ CỤC CHÍNH BẰNG CSS GRID 
-   ========================================================= */
-.news-grid {
-    display: grid;
-    /* Tự động chia cột: tối thiểu 350px, tự động nở rộng bù chỗ trống */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px; /* Khoảng cách thẩm mỹ xuất sắc */
-    align-items: stretch;
-}
-
-/* Thẻ tin nổi bật chiếm nhiều diện tích hơn khi ở màn hình lớn */
-@media (min-width: 1100px) {
-    .news-card.featured {
-        grid-column: span 2; /* Chiếm 2 cột grid */
-    }
-}
-
-
-/* =========================================================
-   BỐ CỤC CHI TIẾT (MỖI BÀI BÁO) BẰNG FLEXBOX
-   ========================================================= */
-.news-card {
-    background: rgba(20, 20, 20, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
-    overflow: hidden; /* Cắt gọn gàng cho hình ảnh */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    
-    /* Flexbox setup cho khối dọc */
-    display: flex;
-    flex-direction: column; 
-    
-    transition: var(--transition-slow);
-}
-
-.news-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-    border-color: rgba(212, 175, 55, 0.3); /* Viền gold nhẹ khi hover */
-    background: rgba(30, 30, 30, 0.5);
-}
-
-/* Hình ảnh bài viết */
-.news-img-box {
+    margin: 0 auto 100px auto;
+    max-width: 1400px;
     position: relative;
-    width: 100%;
-    /* Flexbox hỗ trợ định hình form */
-    display: flex;
-    height: 300px;
+    z-index: 10;
+    padding: 100px 0;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 80%);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 2s var(--transition-elite);
     overflow: hidden;
 }
 
-.news-card.featured .news-img-box {
-    height: 450px; /* Bài nổi bật thì ảnh to hơn */
-}
-
-.news-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Phủ kín khung, không méo */
-    transition: transform 0.8s ease;
-}
-
-.news-card:hover .news-img-box img {
-    transform: scale(1.08); /* Phóng lớn chậm để tạo cảm giác chìm đắm */
-}
-
-/* Danh mục tin (Tag) nổi lên ảnh */
-.news-category {
+/* Jewelry Opening Lines */
+.news-header::before,
+.news-header::after {
+    content: '';
     position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-gold);
-    color: var(--primary-gold);
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 6px 15px;
-    border-radius: 30px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--luxury-gold), transparent);
+    transform: translateX(-50%);
+    transition: width 2.5s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+}
+
+.news-header::before { top: 80px; }
+.news-header::after { bottom: 80px; }
+
+.news-header.reveal-active::before,
+.news-header.reveal-active::after {
+    width: 85%;
+}
+
+.news-header.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-header h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Reduced for more elegant scale */
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    letter-spacing: 15px; /* Proportional reduction */
     text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Khối thông tin văn bản */
-.news-info {
-    padding: 30px;
-    /* Flexbox để dàn văn bản dọc */
+    margin: 0;
+    line-height: 1.1;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Chiếm hết khoản trống còn lại, đẩy nút Read More xuống đáy */
-    gap: 15px; /* Giãn cách các thành phần trong chữ */
-}
-
-/* Micro layout Meta-data (ngày, tác giả) */
-.meta-data {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    font-weight: 500;
+    white-space: nowrap;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(
+        110deg, 
+        #d4af37 40%, 
+        #ffffff 50%, 
+        #d4af37 60%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: metallicSweep 3.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 1px rgba(212, 175, 55, 0.4));
 }
 
-.meta-data .separator {
-    color: rgba(255,255,255,0.2);
+@keyframes metallicSweep {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
 }
 
-.meta-data .author {
-    color: rgba(255, 255, 255, 0.6);
+.news-header h1 span {
+    font-weight: 800; /* Contrast Bold weight */
+    color: inherit;
+    -webkit-text-fill-color: transparent;
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
-.news-info h2 {
-    font-size: 1.6rem;
-    line-height: 1.4;
-    font-weight: 700;
-    color: #fff;
-    transition: color 0.3s ease;
+/* Expert Balance Micro-spacing (Symmetric Ampersand) */
+.luxury-char.luxury-space {
+    display: inline-block;
+    width: 25px; /* Harmonized rhythmic gap */
 }
 
-.news-card.featured h2 {
-    font-size: 2.2rem;
+.luxury-char.luxury-amp {
+    display: inline-block;
+    margin: 0 45px; /* Symmetric focal focus */
+    color: var(--luxury-gold);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
-.news-card:hover h2 {
-    color: var(--primary-gold);
-}
-
-.news-excerpt {
-    font-size: 0.95rem;
-    color: var(--text-dim);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Flexbox để hút nút bấm */
-.read-more-btn {
-    text-decoration: none;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+/* --- AI VOICE & INTERACTION UI --- */
+.ai-voice-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-top: auto; /* Magic từ Flexbox: Tự đẩy nút bấm xuống dưới cùng khung */
-    padding-bottom: 5px;
-    width: max-content;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
+    gap: 12px;
+    padding: 12px 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--luxury-gold);
+    color: var(--luxury-gold);
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 40px;
+    text-transform: uppercase;
 }
 
-.read-more-btn svg {
-    transition: transform 0.3s ease;
+.ai-voice-btn:hover {
+    background: var(--luxury-gold);
+    color: #000;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
 }
 
-.read-more-btn:hover {
-    color: var(--primary-gold);
+/* --- AI TYPING ANIMATION (SYNCED) --- */
+.luxury-char {
+    opacity: 0;
+    transform: translateY(15px);
+    display: inline-block;
+    filter: blur(5px);
+    animation: charReveal 0.6s forwards cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.read-more-btn:hover svg {
-    transform: translateX(5px); /* Arrow move right */
-    stroke: var(--primary-gold);
+@keyframes charReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Redundant styles removed for cleaner code */
+
+.news-line {
+    margin: 40px auto 0;
+    width: 60px;
+    height: 2px;
+    background: var(--luxury-gold);
+    box-shadow: 0 0 20px var(--luxury-gold);
+}
+
+/* --- CENTER WRAPPER (96% WIDTH) --- */
+.news-center-wrapper {
+    width: 96%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+/* --- TOP ROW (SEAMLESS SYNC) --- */
+.news-top-row {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    width: 100%;
+}
+
+.news-card-full {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Cinematographic Frame */
+    min-height: 700px;
+    background: #000;
+    overflow: hidden;
+    border: 1px solid var(--luxury-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LAYER PHỦ GRADIENT (DƯỚI CHỮ, TRÊN ẢNH) */
+.news-card-full::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+    z-index: 2;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 130%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.5);
+    z-index: 1;
+    transition: 0.8s var(--transition-elite), filter 0.5s;
+}
+
+/* --- IMMERSIVE CAR ACTIONS: LIGHTS & IGNITION --- */
+.vehicle-lights-active .parallax-bg {
+    filter: brightness(0.8) contrast(1.2) saturate(1.1);
+}
+
+.vehicle-lights-active .parallax-bg::before,
+.vehicle-lights-active .parallax-bg::after {
+    content: '';
+    position: absolute;
+    top: 45%; 
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Headlight Beams (Expert Lens Flare) */
+.vehicle-lights-active .parallax-bg::before {
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(212, 175, 55, 0.4) 30%, transparent 70%);
+    box-shadow: 0 0 100px rgba(212, 175, 55, 0.6);
+    filter: blur(10px);
+    opacity: 0.8;
+}
+
+.vehicle-lights-active .parallax-bg::after {
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(212, 175, 55, 0.4) 30%, transparent 70%);
+    box-shadow: 0 0 100px rgba(212, 175, 55, 0.6);
+    filter: blur(10px);
+    opacity: 0.8;
+}
+
+/* Engine Vibration (Expert Force Feedback) */
+.engine-vibrate {
+    animation: engineVib 0.1s linear infinite;
+}
+
+@keyframes engineVib {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    25% { transform: translate(-1px, -2px) rotate(-1deg); }
+    50% { transform: translate(-3px, 0px) rotate(1deg); }
+    75% { transform: translate(3px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+
+/* NỘI DUNG (KHÔNG CÒN HỘP BAO BỌC) */
+.news-info-overlay {
+    position: relative;
+    z-index: 10; /* Trên lớp Gradient */
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 0; /* Gỡ padding của hộp cũ */
+    transition: 0.8s var(--transition-elite);
+}
+
+.news-cat-zen {
+    display: inline-block;
+    color: var(--luxury-gold);
+    font-size: 1rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+    overflow: hidden; /* Constrain fire to text width */
+}
+
+/* Ignition Streak: Fire Pillar Effect */
+.news-info-overlay h2::after,
+.news-cat-zen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 60, 0, 0) 0%,
+        rgba(255, 60, 0, 0.8) 40%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(255, 60, 0, 0.8) 60%,
+        rgba(255, 60, 0, 0) 100%
+    );
+    filter: blur(5px);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.news-card-full:hover .news-info-overlay h2::after,
+.news-card-full:hover .news-cat-zen::after,
+.news-card-standard:hover h2::after,
+.news-card-standard:hover .news-cat-zen::after {
+    animation: ignitionSweep 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes ignitionSweep {
+    0% { left: -100%; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.news-card-full:hover h2, 
+.news-card-standard:hover h2 {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 60, 0, 0.6);
+    transition: 0.3s;
+}
+
+/* GẠCH CHÂN VÀNG MẢNH - ZEN LINE */
+.news-cat-zen::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--luxury-gold);
+    box-shadow: 0 0 10px var(--luxury-gold);
+    transition: 0.5s;
+}
+
+.news-card-full:hover .news-cat-zen::after {
+    width: 80px; /* Hiệu ứng dòng kẻ dãn ra khi hover */
+}
+
+.news-info-overlay h2 {
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    margin-bottom: 35px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block; /* Expert scaling: fire pillar only within text */
+    overflow: hidden; /* Clips fire streak precisely to text boundary */
+}
+
+.news-info-overlay p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 900px;
+    margin: 0 auto 60px;
+    line-height: 2;
+}
+
+
+
+.news-card-standard {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.6s var(--transition-elite);
+}
+
+.news-card-standard:hover {
+    border-color: var(--luxury-gold);
+    transform: translateY(-20px);
+}
+
+.news-card-standard img { width: 100%; height: 450px; object-fit: cover; transition: 1.5s var(--transition-elite); }
+.news-card-standard:hover img { transform: scale(1.1); }
+.news-card-standard .news-info { padding: 60px; text-align: center; }
+.news-card-standard h2 { font-size: 2rem; color: #fff; margin-bottom: 30px; }
+
+/* ZEN BTN */
+.zen-btn {
+    display: inline-block;
+    padding: 20px 60px;
+    border: 1px solid var(--luxury-gold);
+    color: var(--luxury-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 1rem;
+    transition: 0.5s;
+    background: transparent;
+}
+
+.zen-btn:hover { background: var(--luxury-gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.5); }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .news-info-overlay h1, .news-info-overlay h2 { font-size: 2.5rem; letter-spacing: 10px; }
+    .news-card-full { height: 60vh; min-height: 500px; }
+    .news-info-overlay { width: 90%; }
 }

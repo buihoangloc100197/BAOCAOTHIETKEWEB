@@ -1,18 +1,32 @@
 :root {
     /* --- BẢNG MÀU ELITE LUXURY --- */
-    --primary-gold: #d4af37;                /* Vàng Gold nguyên bản */
-    --metallic-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%); /* Vàng kim loại 4D */
-    --bg-deep: #050505;                     /* Đen sâu tuyệt đối */
-    --bg-glass: rgba(15, 15, 15, 0.75);     /* Nền kính mờ */
-    --text-main: #ffffff;                   /* Chữ trắng tinh khiết */
-    --text-dim: #999999;                    /* Chữ xám mờ tinh xảo */
-    --border-gold: rgba(212, 175, 55, 0.2); /* Viền vàng mảnh nhạt */
-    
+    --primary-gold: #d4af37;
+    /* Vàng Gold nguyên bản */
+    --luxury-gold: #d4af37;
+    /* Standard Gold Alias */
+    --metallic-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%);
+    /* Vàng kim loại 4D */
+    --bg-deep: #050505;
+    /* Đen sâu tuyệt đối */
+    --bg-glass: rgba(15, 15, 15, 0.75);
+    /* Nền kính mờ */
+    --text-main: #ffffff;
+    /* Chữ trắng tinh khiết */
+    --text-dim: #999999;
+    /* Chữ xám mờ tinh xảo */
+    --border-gold: rgba(212, 175, 55, 0.2);
+    /* Viền vàng mảnh nhạt */
+
     /* --- HỆ THỐNG ĐIỀU KHIỂN --- */
-    --header-height: 100px;                 /* Header cao ráo, bề thế */
-    --lux-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); /* Đổ bóng sâu tạo khối */
-    --lux-blur: blur(25px) saturate(180%);  /* Hiệu ứng kính mờ chuẩn chuyên gia */
-    --transition-slow: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Chuyển động quyền quý */
+    --header-height: 100px;
+    /* Header cao ráo, bề thê */
+    --lux-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    /* Đổ bóng sâu tạo khối */
+    --lux-blur: blur(25px) saturate(180%);
+    /* Hiệu ứng kính mờ chuẩn chuyên gia */
+    --transition-slow: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Chuyển động quyền quý */
+    --transition-elite: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* --- TỔNG THỂ (GLOBAL) --- */
@@ -29,7 +43,8 @@ body {
     line-height: 1.8;
     letter-spacing: 0.03em;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;    /* Làm mượt nét chữ trên MacOS/iOS */
+    -webkit-font-smoothing: antialiased;
+    /* Làm mượt nét chữ trên MacOS/iOS */
 }
 
 /* --- BỐ CỤC CHUYÊN GIA (GRID & PURE LAYOUT) --- */
@@ -43,7 +58,8 @@ body {
 /* --- HEADER KÍNH MỜ (FLOATING GLASS HEADER) --- */
 header {
     grid-area: header;
-    position: fixed;                        /* Pinned Header đẳng cấp */
+    position: fixed;
+    /* Pinned Header đẳng cấp */
     top: 0;
     left: 0;
     width: 100%;
@@ -51,7 +67,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 100px;                       /* Lề hông rộng 100px tạo sự thoáng đạt */
+    padding: 0 100px;
+    /* Lề hông rộng 100px tạo sự thoáng đạt */
     background: rgba(5, 5, 5, 0.7);
     backdrop-filter: var(--lux-blur);
     border-bottom: 1px solid var(--border-gold);
@@ -60,7 +77,8 @@ header {
 }
 
 header:hover {
-    background: rgba(5, 5, 5, 0.9);         /* Đậm nền hơn khi tương tác */
+    background: rgba(5, 5, 5, 0.9);
+    /* Đậm nền hơn khi tương tác */
 }
 
 /* --- LANGUAGE SELECTOR & i18n --- */
@@ -106,9 +124,10 @@ header:hover {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.4s steps(4); /* HIỆU ỨNG NHẢY BẬC */
+    transition: all 0.4s steps(4);
+    /* HIỆU ỨNG NHẢY BẬC */
     z-index: 10001;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 .language-selector:hover .lang-dropdown {
@@ -119,14 +138,16 @@ header:hover {
 
 .lang-option {
     padding: 12px 25px;
-    transition: all 0.2s steps(2); /* NHẢY BẬC KHI HOVER OPTION */
+    transition: all 0.2s steps(2);
+    /* NHẢY BẬC KHI HOVER OPTION */
     color: #ccc;
 }
 
 .lang-option:hover {
     background: var(--metallic-gold);
     color: #000;
-    padding-left: 35px; /* Nhảy sang ngang một bậc */
+    padding-left: 35px;
+    /* Nhảy sang ngang một bậc */
     font-weight: 800;
 }
 
@@ -149,14 +170,16 @@ header:hover {
 }
 
 .logo-img {
-    height: 60px;                           /* Logo lớn hơn, uy phong hơn */
+    height: 60px;
+    /* Logo lớn hơn, uy phong hơn */
     filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
 }
 
 .logo-text {
     font-size: 2rem;
     font-weight: 800;
-    letter-spacing: 8px;                    /* Dãn chữ cực rộng thể hiện thương hiệu lớn */
+    letter-spacing: 8px;
+    /* Dãn chữ cực rộng thể hiện thương hiệu lớn */
     background: var(--metallic-gold);
     -webkit-background-clip: text;
     background-clip: text;
@@ -167,14 +190,16 @@ header:hover {
 /* --- NAVIGATION (MINIMAL LUXURY) --- */
 .nav-links {
     display: flex;
-    gap: 50px;                              /* Khoảng cách menu rộng rãi */
+    gap: 50px;
+    /* Khoảng cách menu rộng rãi */
     list-style: none;
 }
 
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
-    font-weight: 400;                       /* Phông mảnh cho sự tinh tế */
+    font-weight: 400;
+    /* Phông mảnh cho sự tinh tế */
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 3px;
@@ -193,18 +218,21 @@ header:hover {
     transition: var(--transition-slow);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-gold);
 }
 
-.nav-links a:hover::after, .nav-links a.active::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
 /* --- NAV DROPDOWN (MENU SIÊU XE) --- */
 .nav-dropdown {
     position: relative;
-    padding-bottom: 20px; /* Bridge gap for hover */
+    padding-bottom: 20px;
+    /* Bridge gap for hover */
     margin-bottom: -20px;
 }
 
@@ -220,7 +248,8 @@ header:hover {
     padding: 15px 0;
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" steps animation */
+    transition: transform 0.4s steps(6), opacity 0.3s;
+    /* "Nhảy bậc" steps animation */
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -245,14 +274,19 @@ header:hover {
     letter-spacing: 3px;
     color: #fff;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     opacity: 0.6 !important;
 }
 
-.dropdown-content a::after { display: none; } /* Bo gach chan cho dropdown */
+.dropdown-content a::after {
+    display: none;
+}
+
+/* Bo gach chan cho dropdown */
 
 .dropdown-content li:hover {
-    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+    transform: scale(1.15);
+    /* "Dua chuot vao dong nao thi dong day hien thi to len" */
     background: rgba(212, 175, 55, 0.1);
 }
 
@@ -266,14 +300,17 @@ header:hover {
     grid-area: content;
     display: grid;
     grid-template-areas: "main sidebar";
-    grid-template-columns: 1fr 400px;       /* Sidebar rộng hơn để chứa nội dung chất lượng */
+    grid-template-columns: 1fr 400px;
+    /* Sidebar rộng hơn để chứa nội dung chất lượng */
     gap: 0;
-    background: radial-gradient(circle at 30% 30%, #111 0%, #050505 100%); /* Hiệu ứng ánh sáng studio */
+    background: radial-gradient(circle at 30% 30%, #111 0%, #050505 100%);
+    /* Hiệu ứng ánh sáng studio */
 }
 
 main {
     grid-area: main;
-    padding: 100px 80px;                    /* Padding lớn tạo khoảng không chuyên gia */
+    padding: 100px 80px;
+    /* Padding lớn tạo khoảng không chuyên gia */
 }
 
 aside {
@@ -282,9 +319,12 @@ aside {
     border-left: 1px solid var(--border-gold);
     padding: 100px 50px;
     backdrop-filter: blur(10px);
-    position: sticky;                      /* Sidebar dính vào màn hình khi cuộn */
-    top: var(--header-height);              /* Vị trí dính cách Header một khoảng chuẩn */
-    height: fit-content;                    /* Đảm bảo Sidebar chỉ cao bằng nội dung để trượt mượt */
+    position: sticky;
+    /* Sidebar dính vào màn hình khi cuộn */
+    top: var(--header-height);
+    /* Vị trí dính cách Header một khoảng chuẩn */
+    height: fit-content;
+    /* Đảm bảo Sidebar chỉ cao bằng nội dung để trượt mượt */
 }
 
 /* --- HERO SECTION CINEMATIC --- */
@@ -302,14 +342,15 @@ aside {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Video luon phu kin khung hinh */
+    object-fit: cover;
+    /* Video luon phu kin khung hinh */
     z-index: 1;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
     z-index: 2;
 }
 
@@ -317,7 +358,8 @@ aside {
     position: relative;
     z-index: 3;
     padding: 100px;
-    text-align: left;                       /* Căn trái tạo sự hiện đại, lôi cuốn */
+    text-align: left;
+    /* Căn trái tạo sự hiện đại, lôi cuốn */
 }
 
 .hero-content h1 {
@@ -337,53 +379,63 @@ aside {
 /* --- SIÊU PHẨM (CAR CARDS) --- */
 .car-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Hiển thị 3 xe mỗi hàng */
-    gap: 60px 40px;                         /* Khoảng cách chuẩn chuyên gia cho layout 3 cột */
+    grid-template-columns: repeat(3, 1fr);
+    /* Hiển thị 3 xe mỗi hàng */
+    gap: 60px 40px;
+    /* Khoảng cách chuẩn chuyên gia cho layout 3 cột */
     justify-content: center;
 }
 
 .item-car {
-    background: rgba(10, 10, 10, 0.15);      /* Trong suốt cực cao để thấy showroom background */
+    background: rgba(10, 10, 10, 0.15);
+    /* Trong suốt cực cao để thấy showroom background */
     backdrop-filter: blur(25px) saturate(180%);
     border-radius: 30px;
     padding: 50px 40px;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Viền mờ tinh tế */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Viền mờ tinh tế */
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    align-items: center;                    /* Căn giữa toàn bộ nội dung trong thẻ xe */
-    text-align: center;                     /* Chữ căn giữa đồng bộ với ảnh */
+    align-items: center;
+    /* Căn giữa toàn bộ nội dung trong thẻ xe */
+    text-align: center;
+    /* Chữ căn giữa đồng bộ với ảnh */
     position: relative;
     z-index: 10;
-    overflow: hidden;                       /* Kiểm soát các lớp nội dung bên trong */
+    overflow: hidden;
+    /* Kiểm soát các lớp nội dung bên trong */
 }
 
 .item-car:hover {
     transform: translateY(-20px) scale(1.02);
     background: rgba(10, 10, 10, 0.3);
     border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
 }
 
 .car-img-container {
-    width: 200px;                           
+    width: 200px;
     height: 200px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 50%;                     
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 30px;                    
+    margin: 0 auto 30px;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow: hidden;                       
+    overflow: hidden;
 }
 
 .car-img-container img {
-    width: 100%;                            /* Ảnh chiếm trọn chiều rộng khung tròn */
-    height: 100%;                           /* Ảnh chiếm trọn chiều cao khung tròn */
-    object-fit: cover;                      /* Cắt ảnh thông minh để lấp đầy hình tròn */
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    width: 100%;
+    /* Ảnh chiếm trọn chiều rộng khung tròn */
+    height: 100%;
+    /* Ảnh chiếm trọn chiều cao khung tròn */
+    object-fit: cover;
+    /* Cắt ảnh thông minh để lấp đầy hình tròn */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
     transition: var(--transition-slow);
 }
 
@@ -419,7 +471,8 @@ aside {
     opacity: 0;
     visibility: hidden;
     transform: scale(0.9);
-    transition: transform 0.5s steps(6), opacity 0.3s; /* Hiệu ứng ghim nhảy bậc */
+    transition: transform 0.5s steps(6), opacity 0.3s;
+    /* Hiệu ứng ghim nhảy bậc */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -437,11 +490,20 @@ aside {
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.info-label { color: var(--text-dim); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
-.info-value { font-weight: 600; color: var(--primary-gold); }
+.info-label {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--primary-gold);
+}
 
 /* --- SIDEBAR REFINEMENT --- */
 .sidebar-title {
@@ -465,7 +527,10 @@ aside {
     text-align: center;
 }
 
-.ad-card:hover { border-color: var(--primary-gold); transform: scale(1.02); }
+.ad-card:hover {
+    border-color: var(--primary-gold);
+    transform: scale(1.02);
+}
 
 /* --- FOOTER / OFFERS --- */
 .special-offer {
@@ -477,4 +542,293 @@ aside {
     margin-top: 60px;
 }
 
-.special-offer p { font-weight: 800; font-size: 1.2rem; margin-bottom: 5px; }
+.special-offer p {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* --- ZORENBA AI ASSISTANT ORB (EXPERT UI) --- */
+.zorenba-orb-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: move;
+    /* 🧲 Draggable cursor indication */
+    user-select: none;
+    /* Prevent text selection while dragging */
+    -webkit-user-select: none;
+    will-change: left, top;
+    /* GPU acceleration hint */
+    touch-action: none;
+    /* Smoother touch drag */
+}
+
+/* --- DRAGGING STATE --- */
+.zorenba-orb-container.orb-dragging {
+    opacity: 0.85;
+    filter: brightness(1.3) drop-shadow(0 0 20px var(--luxury-gold));
+    transition: none !important;
+    /* Instant response while dragging */
+}
+
+.zorenba-orb-container.orb-dragging .zorenba-orb {
+    transform: scale(1.15);
+    border-color: var(--luxury-gold);
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.7), 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* --- AI ORB SNAP HINT (tooltip kéo) --- */
+.zorenba-orb-container::before {
+    content: '⠿ KÉO ĐỂ DI CHUYỂN';
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    color: rgba(212, 175, 55, 0.5);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.zorenba-orb-container:hover::before {
+    opacity: 1;
+}
+
+.zorenba-orb {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: 0.5s var(--transition-elite);
+}
+
+.zorenba-orb::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent, var(--luxury-gold), transparent);
+    animation: orbRotate 4s linear infinite;
+    opacity: 0.3;
+}
+
+.orb-core {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #fff, var(--luxury-gold));
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--luxury-gold);
+    transition: 0.5s;
+    animation: orbPulse 2s ease-in-out infinite;
+}
+
+.orb-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--luxury-gold);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Listening State */
+.zorenba-orb.active {
+    border-color: #fff;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.8);
+    transform: scale(1.1);
+}
+
+.zorenba-orb.active .orb-core {
+    background: #fff;
+    box-shadow: 0 0 30px #fff;
+    animation: orbPulse 0.5s ease-in-out infinite;
+}
+
+.zorenba-orb.active .orb-wave {
+    animation: orbRipple 1.5s linear infinite;
+}
+
+.orb-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--luxury-gold);
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   ZORENB AI 3.0 — GLOBAL ACTION SYSTEM STYLES
+   ============================================================ */
+
+/* --- VEHICLE LIGHTS ACTIVE (EXPERT LENS FLARE) --- */
+.item-car.vehicle-lights-active .car-img-container img {
+    filter: brightness(1.5) contrast(1.2) saturate(1.2);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
+}
+
+.item-car.vehicle-lights-active .car-img-container::before,
+.item-car.vehicle-lights-active .car-img-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(212, 175, 55, 0.4) 30%, transparent 70%);
+    box-shadow: 0 0 100px rgba(212, 175, 55, 0.6);
+    filter: blur(15px);
+    z-index: 100;
+    pointer-events: none;
+    animation: lightFlarePulse 2s infinite alternate;
+}
+
+.item-car.vehicle-lights-active .car-img-container::before {
+    left: 10%;
+    transform: translateY(-50%) skewX(-15deg);
+}
+
+.item-car.vehicle-lights-active .car-img-container::after {
+    right: 10%;
+    transform: translateY(-50%) skewX(15deg);
+}
+
+@keyframes lightFlarePulse {
+    from { opacity: 0.6; transform: translateY(-50%) scale(0.9); }
+    to { opacity: 1; transform: translateY(-50%) scale(1.1); }
+}
+
+/* --- ENGINE VIBRATE --- */
+.engine-vibrate {
+    animation: engineRoarVibrate 0.12s linear infinite;
+}
+
+@keyframes engineRoarVibrate {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(-2px) translateY(1px);
+    }
+
+    50% {
+        transform: translateX(2px) translateY(-1px);
+    }
+
+    75% {
+        transform: translateX(-1px) translateY(2px);
+    }
+
+    100% {
+        transform: translateX(1px) translateY(0);
+    }
+}
+
+/* --- AI SHOW DETAIL (Active via AI) --- */
+.item-car.active-detail-ai .car-detail {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+}
+
+/* --- AI ORB DRAGGING STATE --- */
+.zorenba-orb-container.orb-dragging {
+    transition: none !important;
+    opacity: 0.8;
+    cursor: grabbing;
+}
+
+
+/* --- HIỂN THỊ THÔNG SỐ (Bằng AI) --- */
+.item-car.show-detail-ai .car-detail,
+.item-car.active-detail-ai .car-detail {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    border-color: rgba(212, 175, 55, 0.5) !important;
+    animation: aiDetailPulse 2s ease-in-out infinite;
+}
+
+@keyframes aiDetailPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    }
+}
+
+/* ============================================================
+   ZORENB AI 5.0 — GHOST CURSOR (CON TRỎ MA THUẬT)
+   ============================================================ */
+.zorenb-ghost-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fff 0%, var(--luxury-gold) 40%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--luxury-gold), 0 0 30px rgba(212, 175, 55, 0.5);
+    pointer-events: none; /* Không cản trở click thật */
+    z-index: 100000;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.zorenb-ghost-cursor::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: cursorRipple 1s linear infinite;
+}
+
+@keyframes cursorRipple {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* --- AI PULSE EFFECT (KHI ĐANG NHẬN LỆNH) --- */
+.zorenba-orb.ai-pulse-active {
+    animation: ai-pulse-glow 1s infinite alternate;
+}
+
+.zorenba-orb.ai-pulse-active .orb-wave {
+    animation: ai-pulse-wave 0.8s infinite;
+    opacity: 0.8;
+}
+
+@keyframes ai-pulse-glow {
+    from { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.4); }
+    to { box-shadow: 0 0 40px rgba(212, 175, 55, 0.8), inset 0 0 20px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes ai-pulse-wave {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
