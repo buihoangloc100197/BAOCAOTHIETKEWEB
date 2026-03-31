@@ -1,0 +1,354 @@
+/* ==========================================================================
+   ZORENB LUXURY DARK MODE - EDITORIAL SYSTEM
+   Designed for High-End Automotive Showcase
+   ========================================================================== */
+
+:root {
+    --deep-bg: #050505;
+    --luxury-gold: #d4af37;
+    --metallic-silver: #e0e0e0;
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --border-subtle: rgba(212, 175, 55, 0.15);
+    --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.luxury-editorial {
+    background-color: var(--deep-bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- READING PROGRESS BAR --- */
+.reading-progress-container {
+    position: fixed;
+    top: 80px; /* Below header */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#reading-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #d4af37, #f7e0a8);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+/* --- CINEMATIC HERO BANNER --- */
+.hero-3d-viewport {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Cinematic scale */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-poster-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    animation: slowZoom 30s infinite alternate;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+}
+
+.hero-3d-viewport::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, var(--deep-bg), transparent);
+}
+
+.hero-3d-viewport .hero-content-overlay {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero-3d-viewport h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 15px; /* Ultra kerning */
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s forwards 0.5s;
+}
+
+.hero-3d-viewport .category-tag {
+    font-family: 'Outfit', sans-serif;
+    color: var(--luxury-gold);
+    text-transform: uppercase;
+    letter-spacing: 12px; /* Jewelry-standard kerning */
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.3s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 0 1px rgba(212, 175, 55, 0.5);
+}
+
+.hero-3d-viewport .category-tag::before,
+.hero-3d-viewport .category-tag::after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(to var(--direction, right), var(--luxury-gold), transparent);
+}
+
+.hero-3d-viewport .category-tag::before { --direction: left; }
+.hero-3d-viewport .category-tag::after { --direction: right; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ZEN ARTICLE CONTAINER --- */
+.zen-article-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    position: relative;
+}
+
+.article-body {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: 60px;
+    text-align: justify;
+}
+
+.article-body p { transition: var(--transition-smooth); padding: 5px 15px; border-radius: 5px; border-left: 0px solid var(--luxury-gold);
+    margin-bottom: 30px;
+}
+
+.article-body b, .article-body strong {
+    color: var(--luxury-gold);
+    font-weight: 600;
+}
+
+/* --- LUXURY SPECS GRID --- */
+.specs-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Wide spacing */
+    margin: 80px 0;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.spec-item {
+    text-align: center;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--luxury-gold);
+    margin-bottom: 10px;
+}
+
+.spec-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--metallic-silver);
+}
+
+/* --- ZEN GALLERY GRID (SCALED FOR POWER) --- */
+.zen-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; /* Grand breathing room */
+    margin: 100px auto 0;
+    max-width: 1300px; /* Breaking out of the article flow */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+}
+
+.gallery-img-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #000;
+    aspect-ratio: 16 / 9; /* Cinematic ratio */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.gallery-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+    filter: grayscale(0.5);
+}
+
+.gallery-img-box:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+/* --- FOOTER SYNC --- */
+.main-footer {
+    padding: 80px 40px;
+    text-align: center;
+    background: #030303;
+    border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.footer-logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--luxury-gold);
+    color: var(--luxury-gold);
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+/* --- AI VOICE & INTERACTION UI --- */
+.ai-voice-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--luxury-gold);
+    color: var(--luxury-gold);
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+.ai-voice-btn:hover {
+    background: var(--luxury-gold);
+    color: #000;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.ai-voice-btn i {
+    font-size: 1.1rem;
+}
+
+/* --- AI TYPING ANIMATION --- */
+.luxury-char {
+    opacity: 0;
+    transform: translateY(15px);
+    display: inline-block;
+    filter: blur(5px);
+    animation: charReveal 0.6s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes charReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* TYPING CURSOR */
+.typed::after {
+    content: '|';
+    color: var(--luxury-gold);
+    animation: blink 0.8s infinite;
+    margin-left: 5px;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* --- ENGINE SOUND INTERACTIVE STATES --- */
+.hero-3d-viewport,
+.hero-poster-placeholder, 
+.gallery-img-box {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23d4af37"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>'), pointer !important;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1000px) {
+    .zen-gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .specs-compact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .zen-article-container {
+        padding: 60px 25px;
+    }
+
+    .ai-voice-btn {
+        margin: 30px auto;
+        display: flex;
+        width: fit-content;
+    }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZORENB - Tin Tức Siêu Xe & Cập Nhật Mới Nhất</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/banxe.css">
+    <link rel="stylesheet" href="css/tintuc.css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="layout-grid banxe-page hue-shift-bg">
+
+    <!-- THANH ĐIỀU HƯỚNG NỔI (GLASS NAVIGATION) -->
+    <header id="main-header">
+        <div class="logo">
+            <img src="image/logo.png" alt="ZORENB Logo" class="logo-img">
+            <span class="logo-text">ZORENB</span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="banxe.html" data-i18n="nav_home">Trang chủ</a></li>
+                <li class="nav-dropdown">
+                    <a href="showroom.html" data-i18n="nav_menu">MENU SIÊU XE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">LAMBORGHINI</a></li>
+                        <li><a href="#">FERRARI</a></li>
+                        <li><a href="#">PORSCHE</a></li>
+                        <li><a href="#">MCLAREN</a></li>
+                        <li><a href="#">ROLLS-ROYCE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-i18n="nav_service">Dịch vụ</a></li>
+                <li><a href="tintuc.html" class="active" data-i18n="nav_news">Tin tức</a></li>
+                <li><a href="lienhe.html" data-i18n="nav_contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 40px;">
+            <div class="language-selector">
+                <div class="lang-label" data-i18n="lang_label">Ngôn ngữ</div>
+                <div class="custom-select">
+                    <span class="current-lang-text">Tiếng Việt</span>
+                    <ul class="lang-dropdown">
+                        <li class="lang-option" data-lang="vi">Tiếng Việt</li>
+                        <li class="lang-option" data-lang="en">English</li>
+                        <li class="lang-option" data-lang="fr">Français</li>
+                        <li class="lang-option" data-lang="zh">简体中文</li>
+                        <li class="lang-option" data-lang="ja">日本語</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-indicator" style="display: flex; align-items: center; gap: 15px;">
+                <div
+                    style="width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00;">
+                </div>
+                <div style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 700; color: var(--primary-gold);"
+                    data-i18n="hotline">ĐƯỜNG DÂY NÓNG: 1900 8888</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper news-wrapper">
+        <main id="primary-content" class="news-main-content">
+
+            <!-- PHẦN HEADER TIN TỨC (REDESIGNED) -->
+            <section class="news-header">
+                <h1 data-i18n="news_main_title">TIN TỨC <span>& SỰ KIỆN NỔI BẬT</span></h1>
+                <div class="zen-line-bottom"></div>
+            </section>
+
+            <!-- FULL-WIDTH STACK & PARALLAX (CANH GIỮA TUYỆT ĐỐI) -->
+            <section class="news-center-wrapper">
+
+                <!-- HÀNG ĐẦU TIÊN: BÀI 1 & BÀI 2 (SEAMLESS CINEMATIC SYNC) -->
+                <div class="news-top-row">
+                    <!-- BÀI BÁO 1 (SEAMLESS CINEMATIC) -->
+                    <article class="news-card-full">
+                        <div class="parallax-bg"
+                            style="background-image: url('image/news/ferrari_concept_news_1774698356923.png');"></div>
+                        <div class="news-info-overlay">
+                            <span class="news-cat-zen">Bản Kiến Tạo Tương Lai</span>
+                            <h2>Ferrari Concept</h2>
+                            <p>Mũi Tên Đỏ Đâm Thủng Màn Đêm Bờ Biển Địa Trung Hải. Ngôn ngữ thiết kế lai táo bạo nhất từ
+                                Maranello lộ diện, sở hữu lớp sơn đỏ ruby kim loại đầy kiêu hãnh.</p>
+                            <a href="news_detail/ferrari-concept.html" class="zen-btn">KHÁM PHÁ CHI TIẾT →</a>
+                        </div>
+                    </article>
+
+                    <!-- BÀI BÁO 2 (SEAMLESS CINEMATIC) -->
+                    <article class="news-card-full">
+                        <div class="parallax-bg"
+                            style="background-image: url('image/news/lambo_hybrid_news_1774698380802.png');"></div>
+                        <div class="news-info-overlay">
+                            <span class="news-cat-zen">Công Nghệ Động Cơ Mới</span>
+                            <h2>Lamborghini Eclipse</h2>
+                            <p>Siêu Phẩm Hypercar Lai Kỷ Nguyên Mới. Lớp sơn đen nhám hấp thụ ánh sáng cùng viền neon
+                                xanh lá mãnh liệt từ "Bò Tót" Italy.</p>
+                            <a href="news_detail/lambo-hybrid.html" class="zen-btn">KHÁM PHÁ CHI TIẾT →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- LƯỚI GRID ĐỀU CHO CÁC TIN KHÁC (EVEN LAYOUT) -->
+                <div class="news-grid-even">
+                    <!-- BÀI BÁO 3 -->
+                    <article class="news-card-standard">
+                        <img src="image/news/rolls_royce_ev_news_1774698408651.png" alt="Rolls">
+                        <div class="news-info">
+                            <span class="news-cat-zen">Xe Điện Siêu Sang</span>
+                            <h2>Rolls-Royce Spectre: Sự Trầm Mặc Quyền Uy</h2>
+                            <p class="news-excerpt-zen"
+                                style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.6);">Kỷ nguyên
+                                thuần điện không làm mất đi vẻ bề thế của ngai vàng di động. Biểu tượng Spirit of
+                                Ecstasy rực sáng tĩnh lặng.</p>
+                            <a href="news_detail/rolls-spectre.html" class="zen-btn"
+                                style="padding: 12px 30px; font-size: 0.8rem;">ĐỌC TIẾP</a>
+                        </div>
+                    </article>
+
+                    <!-- BÀI BÁO 4 -->
+                    <article class="news-card-standard">
+                        <img src="image/cars/mclaren.png" alt="McLaren">
+                        <div class="news-info">
+                            <span class="news-cat-zen">Thị Trường & Sự Kiện</span>
+                            <h2>McLaren MSO: Gói Cá Nhân Hóa Độc Quyền</h2>
+                            <p class="news-excerpt-zen"
+                                style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.6);">Khách hàng
+                                VVIP giờ đây có thể tinh chỉnh triệt để cấu trúc sợi carbon và phối màu khí động học qua
+                                chương trình MSO.</p>
+                            <a href="news_detail/mclaren-custom.html" class="zen-btn"
+                                style="padding: 12px 30px; font-size: 0.8rem;">ĐỌC TIẾP</a>
+                        </div>
+                    </article>
+                </div>
+
+            </section>
+
+
+
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>

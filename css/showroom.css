@@ -1,13 +1,17 @@
 :root {
     /* --- BẢNG MÀU ELITE LUXURY --- */
-    --primary-color: #d4af37;               /* Vàng Gold chủ đạo */
+    --primary-color: #d4af37;
+    /* Vàng Gold chủ đạo */
     --metallic-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%);
-    --bg-deep: #050505;                     /* Đen sâu */
-    --bg-glass: rgba(15, 15, 15, 0.7);      /* Hiệu ứng kính */
+    --bg-deep: #050505;
+    /* Đen sâu */
+    --bg-glass: rgba(15, 15, 15, 0.7);
+    /* Hiệu ứng kính */
     --text-main: #ffffff;
     --text-dim: #999999;
-    --border-gold: transparent;             /* Bo vien trong suot */
-    
+    --border-gold: transparent;
+    /* Bo vien trong suot */
+
     /* --- HỆ THỐNG ĐIỀU KHIỂN --- */
     --header-height: 100px;
     --lux-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
@@ -23,7 +27,8 @@
 }
 
 body {
-    background-image: url('../image/showroom_bg.png'); /* Hinh nen toan trang */
+    background-image: url('../image/showroom_bg.png');
+    /* Hinh nen toan trang */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -39,7 +44,8 @@ body::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* Lop phu de chu de doc hon */
+    background: rgba(0, 0, 0, 0.4);
+    /* Lop phu de chu de doc hon */
     z-index: -1;
 }
 
@@ -63,9 +69,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 80px;
-    background: rgba(5, 5, 5, 0.4); /* Phuong an 2: Minh bach cao */
+    background: rgba(5, 5, 5, 0.4);
+    /* Phuong an 2: Minh bach cao */
     backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 10000;
 }
 
@@ -118,9 +125,10 @@ header {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.4s steps(4); /* HIỆU ỨNG NHẢY BẬC */
+    transition: all 0.4s steps(4);
+    /* HIỆU ỨNG NHẢY BẬC */
     z-index: 10001;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 .language-selector:hover .lang-dropdown {
@@ -131,7 +139,8 @@ header {
 
 .lang-option {
     padding: 12px 25px;
-    transition: all 0.2s steps(2); /* NHẢY BẬC KHI HOVER OPTION */
+    transition: all 0.2s steps(2);
+    /* NHẢY BẬC KHI HOVER OPTION */
     color: #ccc;
 }
 
@@ -192,7 +201,8 @@ header {
     opacity: 0.7;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     opacity: 1;
     color: var(--primary-color);
 }
@@ -200,7 +210,8 @@ header {
 /* --- NAV DROPDOWN (MENU SIÊU XE) --- */
 .nav-dropdown {
     position: relative;
-    padding-bottom: 30px; /* Bridge gap for hover */
+    padding-bottom: 30px;
+    /* Bridge gap for hover */
     margin-bottom: -30px;
 }
 
@@ -216,7 +227,8 @@ header {
     padding: 15px 0;
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" steps animation */
+    transition: transform 0.4s steps(6), opacity 0.3s;
+    /* "Nhảy bậc" steps animation */
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -240,12 +252,13 @@ header {
     letter-spacing: 3px;
     color: #fff;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     opacity: 0.6 !important;
 }
 
 .dropdown-content li:hover {
-    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+    transform: scale(1.15);
+    /* "Dua chuot vao dong nao thi dong day hien thi to len" */
     background: rgba(212, 175, 55, 0.1);
 }
 
@@ -257,7 +270,8 @@ header {
 /* --- SHOWROOM WRAPPER --- */
 .showroom-wrapper {
     grid-area: content;
-    background: transparent; /* Hien thi nen body xuyen thau */
+    background: transparent;
+    /* Hien thi nen body xuyen thau */
     padding-top: 40px;
 }
 
@@ -275,17 +289,21 @@ header {
     margin-bottom: 60px;
     padding: 0 40px;
     height: 100px;
-    background: rgba(5, 5, 5, 0.4); /* Phuong an 2: Kinh mo thuan tuy */
+    background: rgba(5, 5, 5, 0.4);
+    /* Phuong an 2: Kinh mo thuan tuy */
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    z-index: 10;
+    /* Da bo overflow: hidden de khong bi che menu-dropdown */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    /* Dam bao menu luon nam tren carousel 3D */
 }
 
-.left-controls, .right-controls {
+
+.left-controls,
+.right-controls {
     position: relative;
     z-index: 5;
 }
@@ -305,7 +323,8 @@ header {
     position: relative;
     padding: 10px 20px;
     border-right: none;
-    padding-bottom: 30px; /* Bridge gap for hover */
+    padding-bottom: 30px;
+    /* Bridge gap for hover */
     margin-bottom: -30px;
 }
 
@@ -313,7 +332,9 @@ header {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s;
 }
+
 
 .hamburger-icon {
     width: 24px;
@@ -336,7 +357,15 @@ header {
     font-size: 0.9rem;
     letter-spacing: 2px;
     color: var(--primary-color);
+    transition: 0.3s;
 }
+
+.hamburger-container:hover .menu-label {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    color: #fff;
+    letter-spacing: 3px;
+}
+
 
 /* Brand Nav Dropdown */
 .brand-nav {
@@ -350,15 +379,19 @@ header {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: transform 0.4s steps(6), opacity 0.3s; /* "Nhảy bậc" animation */
-    z-index: 10000; /* Uu tien cao nhat de khong bi che */
+    /* Mac dinh bien mat ngay lap tuc khi hover out */
+    transition: opacity 0s, visibility 0s, transform 0s;
+    z-index: 10000;
     overflow: hidden;
 }
 
-.brand-nav.active {
+
+.brand-nav.active,
+.brand-nav.active-ai {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition: opacity 0.3s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .brand-list {
@@ -368,25 +401,81 @@ header {
 
 .brand-item {
     padding: 15px 25px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    /* Bat dau tu duoi len */
+}
+
+.hamburger-container:hover .brand-item,
+.hamburger-container.active-ai .brand-item {
+    opacity: 1;
+    transform: translateY(0);
+    animation: brandItemJump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* HIỆU ỨNG NHẢY BẬC (STAGGERED DELAY) */
+.hamburger-container:hover .brand-item:nth-child(1),
+.hamburger-container.active-ai .brand-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hamburger-container:hover .brand-item:nth-child(2),
+.hamburger-container.active-ai .brand-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hamburger-container:hover .brand-item:nth-child(3),
+.hamburger-container.active-ai .brand-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hamburger-container:hover .brand-item:nth-child(4),
+.hamburger-container.active-ai .brand-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.hamburger-container:hover .brand-item:nth-child(5),
+.hamburger-container.active-ai .brand-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes brandItemJump {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .brand-item:hover {
     background: rgba(212, 175, 55, 0.1);
-    transform: scale(1.15); /* "Dua chuot vao dong nao thi dong day hien thi to len" */
+    transform: scale(1.05) !important;
+    /* Thay vi scale 1.15 thi 1.05 cho sang trong */
+    padding-left: 35px;
 }
 
 .brand-name {
     font-size: 0.85rem;
     letter-spacing: 2px;
     font-weight: 600;
+    transition: 0.3s;
 }
+
+.brand-item:hover .brand-name {
+    color: var(--primary-color);
+}
+
 
 /* Luxury Select Tool */
 .luxury-select {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -417,9 +506,11 @@ header {
 /* --- 3D CAROUSEL CORE --- */
 .carousel-container {
     padding: 6.25rem 0;
-    perspective: 156.25rem; /* 2500px */
+    perspective: 156.25rem;
+    /* 2500px */
     width: 100%;
-    height: 50rem; /* 800px */
+    height: 50rem;
+    /* 800px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -432,8 +523,10 @@ header {
 }
 
 .carousel-stage {
-    width: 25rem; /* 400px */
-    height: 34.375rem; /* 550px */
+    width: 25rem;
+    /* 400px */
+    height: 34.375rem;
+    /* 550px */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -441,20 +534,23 @@ header {
 
 .item-car {
     position: absolute;
-    width: 25rem; /* 400px */
-    min-height: 28.125rem; /* 450px - Rút ngắn lại cho hợp lý */
+    width: 25rem;
+    /* 400px */
+    min-height: 28.125rem;
+    /* 450px - Rút ngắn lại cho hợp lý */
     left: 0;
     top: 0;
     background: var(--bg-glass);
     border: 1px solid var(--border-gold);
     border-radius: 25px;
     transition: var(--transition-slow);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0; 
-    visibility: hidden; /* Mac dinh an de JS kien soat hien thi 3 xe */
+    padding: 0;
+    visibility: hidden;
+    /* Mac dinh an de JS kien soat hien thi 3 xe */
     opacity: 0;
     pointer-events: none;
     transition: var(--transition-slow);
@@ -464,23 +560,47 @@ header {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    z-index: 50; 
+    z-index: 50;
 }
 
 .item-car:hover {
-    z-index: 1000 !important; /* Luon noi len tren khi quan sat */
-    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+    z-index: 1000 !important;
+    /* Luon noi len tren khi quan sat */
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
 }
 
 /* Định vị các xe trong vòng tròn 3D */
-.item-car[data-index="0"] { transform: rotateY(0deg) translateZ(600px); }
-.item-car[data-index="1"] { transform: rotateY(45deg) translateZ(600px); }
-.item-car[data-index="2"] { transform: rotateY(90deg) translateZ(600px); }
-.item-car[data-index="3"] { transform: rotateY(135deg) translateZ(600px); }
-.item-car[data-index="4"] { transform: rotateY(180deg) translateZ(600px); }
-.item-car[data-index="5"] { transform: rotateY(225deg) translateZ(600px); }
-.item-car[data-index="6"] { transform: rotateY(270deg) translateZ(600px); }
-.item-car[data-index="7"] { transform: rotateY(315deg) translateZ(600px); }
+.item-car[data-index="0"] {
+    transform: rotateY(0deg) translateZ(600px);
+}
+
+.item-car[data-index="1"] {
+    transform: rotateY(45deg) translateZ(600px);
+}
+
+.item-car[data-index="2"] {
+    transform: rotateY(90deg) translateZ(600px);
+}
+
+.item-car[data-index="3"] {
+    transform: rotateY(135deg) translateZ(600px);
+}
+
+.item-car[data-index="4"] {
+    transform: rotateY(180deg) translateZ(600px);
+}
+
+.item-car[data-index="5"] {
+    transform: rotateY(225deg) translateZ(600px);
+}
+
+.item-car[data-index="6"] {
+    transform: rotateY(270deg) translateZ(600px);
+}
+
+.item-car[data-index="7"] {
+    transform: rotateY(315deg) translateZ(600px);
+}
 
 .item-car.focused {
     box-shadow: 0 0 50px rgba(212, 175, 55, 0.1);
@@ -496,26 +616,30 @@ header {
 
 .car-img-container {
     width: 100%;
-    height: 180px; /* Thu nhỏ chiều cao ban đầu */
+    height: 180px;
+    /* Thu nhỏ chiều cao ban đầu */
     margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
-    border-radius: 25px 25px 0 0; /* Bo goc cho anh o tren cung */
+    border-radius: 25px 25px 0 0;
+    /* Bo goc cho anh o tren cung */
     transition: var(--transition-slow);
 }
 
-.item-car:hover .car-img-container, 
+.item-car:hover .car-img-container,
 .item-car.active-detail .car-img-container {
-    height: 140px; /* Thu nhỏ thêm khi xem chi tiết để dành chỗ cho văn bản */
+    height: 140px;
+    /* Thu nhỏ thêm khi xem chi tiết để dành chỗ cho văn bản */
 }
 
 .car-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Om tron vao khung */
+    object-fit: cover;
+    /* Om tron vao khung */
     filter: brightness(0.8);
     transition: var(--transition-slow);
 }
@@ -526,7 +650,8 @@ header {
 }
 
 .item-car:hover .car-img-container {
-    transform: translateY(-40px); /* Day anh len tren */
+    transform: translateY(-40px);
+    /* Day anh len tren */
 }
 
 .item-car h3 {
@@ -536,8 +661,10 @@ header {
     transition: var(--transition-slow);
 }
 
-.item-car:hover h3, .item-car:hover .price-tag {
-    transform: translateY(-40px); /* Dong bo day len */
+.item-car:hover h3,
+.item-car:hover .price-tag {
+    transform: translateY(-40px);
+    /* Dong bo day len */
 }
 
 .price-tag {
@@ -550,9 +677,11 @@ header {
 /* Chi tiết ẩn */
 .car-detail {
     width: 100%;
-    background: rgba(10, 10, 10, 0.9); /* Nen dam de khong bi trung chu voi xe phia sau */
+    background: rgba(10, 10, 10, 0.9);
+    /* Nen dam de khong bi trung chu voi xe phia sau */
     backdrop-filter: blur(20px);
-    padding: 0 30px 40px; /* Tăng padding bottom để tạo khoảng trống phía cuối */
+    padding: 0 30px 40px;
+    /* Tăng padding bottom để tạo khoảng trống phía cuối */
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -562,14 +691,35 @@ header {
     border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.item-car:hover .car-detail {
+.item-car:hover .car-detail,
+.item-car.active-detail-ai .car-detail {
     opacity: 1;
-    max-height: 1500px; /* Đảm bảo thấy hết mọi hàng dữ liệu */
-    transform: translateY(-20px); 
+    max-height: 1500px;
+    /* Đảm bảo thấy hết mọi hàng dữ liệu */
+    transform: translateY(-20px);
+}
+
+.item-car.active-detail-ai .car-detail {
+    border-color: rgba(212, 175, 55, 0.5);
+    animation: aiDetailPulse 2s ease-in-out infinite;
+}
+
+@keyframes aiDetailPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    }
 }
 
 /* Ghim xe duoc chon */
-.item-car.active-detail {
+
+.item-car.active-detail,
+.item-car.active-detail-ai {
     z-index: 500 !important;
     box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
 }
@@ -585,12 +735,22 @@ header {
 .detail-info div {
     display: flex;
     justify-content: space-between;
-    padding: 6px 0; /* Thu nhỏ khoảng cách giữa các hàng */
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 6px 0;
+    /* Thu nhỏ khoảng cách giữa các hàng */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.info-label { color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; }
-.info-value { font-weight: 600; color: #fff; font-size: 0.85rem; }
+.info-label {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.85rem;
+}
 
 /* 3D Navigation Buttons */
 .carousel-nav-3d {
@@ -608,7 +768,7 @@ header {
     width: 60px;
     height: 60px;
     border: none;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     color: #fff;
     font-size: 1.5rem;
@@ -628,7 +788,141 @@ header {
 
 /* --- RESPONSIVE OPTIMIZATION --- */
 @media (max-width: 1200px) {
-    .item-car { width: 320px; }
-    .item-car[data-index] { transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px); }
-    /* Logic CSS này cần script hỗ trợ index, ở đây set tay */
+    .item-car {
+        width: 320px;
+    }
+
+    .item-car[data-index] {
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px);
+    }
+}
+
+/* --- VEHICLE LIGHTS ACTIVE (EXPERT LENS FLARE) --- */
+.item-car.vehicle-lights-active .car-img-container img {
+    filter: brightness(1.5) contrast(1.2) saturate(1.2);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
+}
+
+.item-car.vehicle-lights-active .car-img-container::before,
+.item-car.vehicle-lights-active .car-img-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(212, 175, 55, 0.4) 30%, transparent 70%);
+    box-shadow: 0 0 100px rgba(212, 175, 55, 0.6);
+    filter: blur(15px);
+    z-index: 100;
+    pointer-events: none;
+    animation: lightFlarePulse 2s infinite alternate;
+}
+
+/* AI Active State for Hamburger */
+.hamburger-container.active-ai .hamburger-icon span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger-container.active-ai .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-container.active-ai .hamburger-icon span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.item-car.vehicle-lights-active .car-img-container::before {
+    left: 10%;
+    transform: translateY(-50%) skewX(-15deg);
+}
+
+.item-car.vehicle-lights-active .car-img-container::after {
+    right: 10%;
+    transform: translateY(-50%) skewX(15deg);
+}
+
+@keyframes lightFlarePulse {
+    from { opacity: 0.6; transform: translateY(-50%) scale(0.9); }
+    to { opacity: 1; transform: translateY(-50%) scale(1.1); }
+}
+
+/* --- ZORENB AI ASSISTANT ORB (EXPERT UI) --- */
+.zorenba-orb-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: move;
+    user-select: none;
+    -webkit-user-select: none;
+    will-change: left, top;
+    touch-action: none;
+}
+
+.zorenba-orb-container.orb-dragging {
+    opacity: 0.85;
+    filter: brightness(1.3) drop-shadow(0 0 20px var(--primary-color));
+    transition: none !important;
+}
+
+.zorenba-orb {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: 0.5s var(--transition-slow);
+}
+
+.zorenba-orb::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent, var(--primary-color), transparent);
+    animation: orbRotate 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes orbRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.orb-core {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #fff, var(--primary-color));
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--primary-color);
+    animation: orbPulse 2s ease-in-out infinite;
+}
+
+@keyframes orbPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } }
+
+.orb-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.zorenba-orb.active .orb-wave { animation: orbRipple 1.5s linear infinite; }
+@keyframes orbRipple { from { transform: scale(1); opacity: 1; } to { transform: scale(2.5); opacity: 0; } }
+
+.orb-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
