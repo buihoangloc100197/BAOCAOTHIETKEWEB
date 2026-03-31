@@ -1,0 +1,315 @@
+/* --- TRANG DỊCH VỤ CHUYÊN BIỆT (ELITE SERVICES) --- */
+
+:root {
+    --vip-gold: #d4af37;
+    --vip-gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%);
+    --standard-silver: #c0c0c0;
+    --standard-silver-gradient: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #bdbdbd 100%);
+}
+
+/* --- HỆ THỐNG ĐĂNG NHẬP (LOGIN) --- */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(25px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.login-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.login-overlay.hidden {
+    display: none;
+}
+
+.login-modal {
+    width: 450px;
+    padding: 60px 40px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+}
+
+.login-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.login-header h2 span {
+    background: var(--vip-gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+}
+
+.login-form .input-group {
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.login-form input:focus {
+    border-color: var(--vip-gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-login-gold {
+    width: 100%;
+    padding: 18px;
+    background: var(--vip-gold-gradient);
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.4s;
+}
+
+.btn-login-gold:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* --- PHÂN CẤP NỘI DUNG (TIERS) --- */
+.service-locked {
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+}
+
+.main-title span {
+    background: var(--vip-gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-tier {
+    margin-bottom: 120px;
+}
+
+.tier-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gold-gradient span {
+    color: var(--vip-gold);
+}
+
+/* VIP CARDS */
+.elite-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.vip-card {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+    padding: 60px 40px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vip-card:hover {
+    border-color: var(--vip-gold);
+    box-shadow: 0 40px 100px rgba(212, 175, 55, 0.15);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.vip-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--vip-gold);
+    border: 1px solid var(--vip-gold);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.vip-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    background: var(--vip-gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-list {
+    list-style: none;
+    text-align: left;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.feature-list li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-list li::before {
+    content: '✦';
+    color: var(--vip-gold);
+}
+
+.btn-action-gold {
+    display: block;
+    padding: 15px;
+    border: 1px solid var(--vip-gold);
+    color: var(--vip-gold);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-action-gold:hover {
+    background: var(--vip-gold-gradient);
+    color: #000;
+}
+
+/* STANDARD CARDS */
+.standard-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s;
+}
+
+.standard-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #fff;
+}
+
+.standard-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.standard-card p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 25px;
+}
+
+.service-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.service-footer span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.btn-link {
+    color: var(--vip-gold);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    border-bottom: 1px solid var(--vip-gold);
+}
+
+/* SIDEBAR ELITE */
+.elite-club-card {
+    background: var(--vip-gold-gradient);
+    padding: 40px 30px;
+    border-radius: 20px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.elite-club-card h3 { font-weight: 900; margin-bottom: 15px; letter-spacing: 2px; }
+.elite-club-card p { font-size: 0.85rem; line-height: 1.6; margin-bottom: 25px; }
+
+.btn-join {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.support-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.support-card h4 { color: var(--vip-gold); margin-bottom: 10px; }
+.support-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .elite-grid { grid-template-columns: 1fr; }
+    .main-title { font-size: 2.5rem; letter-spacing: 5px; }
+}

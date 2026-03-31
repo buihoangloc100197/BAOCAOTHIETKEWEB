@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Đặc Quyền - ZORENB Elite Services</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/banxe.css">
+    <link rel="stylesheet" href="css/dichvu.css"> <!-- Link to new specialized CSS -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="layout-grid services-page">
+
+    <!-- THANH ĐIỀU HƯỚNG NỔI -->
+    <header id="main-header">
+        <div class="logo">
+            <img src="image/logo.png" alt="ZORENB Logo" class="logo-img">
+            <span class="logo-text">ZORENB</span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="banxe.html" data-i18n="nav_home">Trang chủ</a></li>
+                <li class="nav-dropdown">
+                    <a href="showroom.html" data-i18n="nav_menu">MENU SIÊU XE</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">LAMBORGHINI</a></li>
+                        <li><a href="#">FERRARI</a></li>
+                        <li><a href="#">PORSCHE</a></li>
+                        <li><a href="#">MCLAREN</a></li>
+                        <li><a href="#">ROLLS-ROYCE</a></li>
+                    </ul>
+                </li>
+                <li><a href="dichvu.html" class="active" data-i18n="nav_service">Dịch vụ</a></li>
+                <li><a href="#" data-i18n="nav_news">Tin tức</a></li>
+                <li><a href="#" data-i18n="nav_contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 40px;">
+            <div class="language-selector">
+                <div class="lang-label" data-i18n="lang_label">Ngôn ngữ</div>
+                <div class="custom-select">
+                    <span class="current-lang-text">Tiếng Việt</span>
+                    <ul class="lang-dropdown">
+                        <li class="lang-option" data-lang="vi">Tiếng Việt</li>
+                        <li class="lang-option" data-lang="en">English</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-indicator" style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00;"></div>
+                <div style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 700; color: var(--primary-gold);" data-i18n="hotline">ĐƯỜNG DÂY NÓNG: 1900 8888</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CỔNG ĐĂNG NHẬP (LOGIN OVERLAY) -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-modal glass-effect">
+            <div class="login-header">
+                <h2>CỔNG VÀO THẾ GIỚI <span>ĐẶC QUYỀN</span></h2>
+                <p>Khám phá hệ sinh thái dịch vụ dành riêng cho chủ nhân siêu xe ZORENB.</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Tên đăng nhập (Admin)" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Mật mã (123)" required>
+                </div>
+                <button type="submit" class="btn-login-gold">XÁC NHẬN TRUY CẬP</button>
+            </form>
+            <div class="login-footer">
+                <p>Chưa có tài khoản? <a href="#">Đăng ký tư vấn</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NỘI DUNG DỊCH VỤ (MẶC ĐỊNH BỊ MỜ) -->
+    <div id="services-content" class="content-wrapper service-locked">
+        <main id="primary-content">
+            
+            <section class="services-intro">
+                <h1 class="main-title">HỆ SINH THÁI <span>ZORENB ELITE</span></h1>
+                <p class="subtitle">Nơi những yêu cầu khắt khe nhất được đáp ứng bằng sự tận tâm tuyệt đối.</p>
+            </section>
+
+            <!-- PHÂN CẤP 1: VIP ELITE CLASS (GOLD) -->
+            <section class="service-tier vip-tier">
+                <h2 class="tier-label gold-gradient">ĐẶC QUYỀN THƯỢNG LƯU VIP <span>(VIP ELITE CLASS)</span></h2>
+                <div class="service-grid elite-grid">
+                    
+                    <article class="service-card vip-card">
+                        <div class="vip-badge">MOST EXCLUSIVE</div>
+                        <div class="service-icon gold-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 11 19 13 23 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Quản gia Xe riêng 24/7</h3>
+                        <p>Chuyên gia kỹ thuật tận tâm chăm sóc xe tại gia, xử lý mọi yêu cầu vận hành bất kể thời điểm.</p>
+                        <ul class="feature-list">
+                            <li>Kiểm tra định kỳ tận nơi</li>
+                            <li>Hỗ trợ thủ tục pháp lý</li>
+                            <li>Dịch vụ lái xe hộ cao cấp</li>
+                        </ul>
+                        <a href="#" class="btn-action-gold">YÊU CẦU DỊCH VỤ</a>
+                    </article>
+
+                    <article class="service-card vip-card">
+                        <div class="service-icon gold-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Lưu trữ Garage Công nghệ cao</h3>
+                        <p>Hệ thống lưu kho môi trường ổn định 22°C, độ ẩm 50%, sạc bù điện thông minh liên tục.</p>
+                        <ul class="feature-list">
+                            <li>Bảo mật vân tay riêng tư</li>
+                            <li>Camera giám sát 24/7</li>
+                            <li>Chế độ hâm nóng động cơ định kỳ</li>
+                        </ul>
+                        <a href="#" class="btn-action-gold">ĐẶT CHỖ LƯU TRỮ</a>
+                    </article>
+
+                    <article class="service-card vip-card">
+                        <div class="service-icon gold-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"></path>
+                            </svg>
+                        </div>
+                        <h3>Hỗ trợ Đường đua & Hành trình</h3>
+                        <p>Đội ngũ kỹ sư cơ động trực diện hỗ trợ trong các chuyến xuyên Việt hoặc ngày hội tốc độ.</p>
+                        <ul class="feature-list">
+                            <li>Thay lốp & Phanh khẩn cấp</li>
+                            <li>Hiệu chỉnh khí động học</li>
+                            <li>Hỗ trợ Team ZORENB Racing</li>
+                        </ul>
+                        <a href="#" class="btn-action-gold">LIÊN HỆ ĐỘI KỸ THUẬT</a>
+                    </article>
+
+                    <article class="service-card vip-card">
+                        <div class="service-icon gold-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Hiệu năng & Bespoke</h3>
+                        <p>Tinh chỉnh ECU, hệ thống xả Titanium bespoke và thiết kế cá nhân hóa không giới hạn.</p>
+                        <ul class="feature-list">
+                            <li>Nâng cấp sức mạnh động cơ</li>
+                            <li>Thiết kế nội thất độc bản</li>
+                            <li>Điều chỉnh âm thanh ống xả</li>
+                        </ul>
+                        <a href="#" class="btn-action-gold">TƯ VẤN CÁ NHÂN HÓA</a>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- PHÂN CẤP 2: STANDARD CLASS (SILVER) -->
+            <section class="service-tier standard-tier">
+                <h2 class="tier-label silver-gradient">DỊCH VỤ TIÊU CHUẨN <span>(STANDARD CLASS)</span></h2>
+                <div class="service-grid">
+                    
+                    <article class="service-card standard-card">
+                        <h3>Bảo dưỡng Precision</h3>
+                        <p>Quy trình kiểm tra 150 điểm chuẩn hãng, sử dụng linh kiện nhập khẩu chính ngạch.</p>
+                        <div class="service-footer">
+                            <span>Giá từ 15.000.000 ₫</span>
+                            <a href="#" class="btn-link">Chi tiết</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card standard-card">
+                        <h3>Bảo hiểm Master Coverage</h3>
+                        <p>Gói bảo hiểm chuyên biệt thiết kế riêng cho các dòng xe giá trị trên 10 tỷ VNĐ.</p>
+                        <div class="service-footer">
+                            <span>Tư vấn theo giá trị xe</span>
+                            <a href="#" class="btn-link">Chi tiết</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card standard-card">
+                        <h3>Thuê xe trải nghiệm</h3>
+                        <p>Tiếp cận và cầm lái những mẫu xe mới nhất trước mốc thời gian sở hữu chính thức.</p>
+                        <div class="service-footer">
+                            <span>Theo ngày / Sự kiện</span>
+                            <a href="#" class="btn-link">Chi tiết</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card standard-card">
+                        <h3>Hoàn thiện Ngoại thất</h3>
+                        <p>Công nghệ phủ Ceramic 9H+, dán phim bảo vệ PPF tự phục hồi vết xước đỉnh cao.</p>
+                        <div class="service-footer">
+                            <span>Bảo hành 5-10 năm</span>
+                            <a href="#" class="btn-link">Chi tiết</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+        <aside id="exclusive-sidebar" class="service-sidebar">
+            <div class="elite-club-card">
+                <h3>ZORENB ELITE CLUB</h3>
+                <p>Thành viên của cộng đồng chủ xe thượng lưu. Tham gia hành trình xuyên lục địa.</p>
+                <button class="btn-join">KHÁM PHÁ ĐẶC QUYỀN</button>
+            </div>
+
+            <div class="support-card">
+                <h4>VẬN CHUYỂN TOÀN CẦU</h4>
+                <p>Giao xe bằng container kín có điều hòa đến bất kỳ điểm nào trên thế giới.</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Script riêng cho xử lý login nhanh chóng ngay tại đây -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const loginOverlay = document.getElementById('login-overlay');
+            const servicesContent = document.getElementById('services-content');
+
+            // Kiểm tra session nếu đã đăng nhập trước đó
+            if (localStorage.getItem('zorenb_authenticated') === 'true') {
+                loginOverlay.classList.add('hidden');
+                servicesContent.classList.remove('service-locked');
+            }
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const user = document.getElementById('username').value;
+                const pass = document.getElementById('password').value;
+
+                // Mock login logic
+                if (user.toLowerCase() === 'admin' && pass === '123') {
+                    // Hiệu ứng đăng nhập thành công
+                    loginOverlay.classList.add('fade-out');
+                    setTimeout(() => {
+                        loginOverlay.classList.add('hidden');
+                        servicesContent.classList.remove('service-locked');
+                        localStorage.setItem('zorenb_authenticated', 'true');
+                    }, 800);
+                } else {
+                    alert('Thông tin truy cập không chính xác. Vui lòng thử lại!');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
